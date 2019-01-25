@@ -1,0 +1,140 @@
+<title>ぴぴぷる</title>
+<div class="tops index">
+  <div class="container-fluid">
+    <div class="row">
+      <section class="head-block">
+        <div class="title-container">
+          <h1>~<ruby><rb>PiPiple</rb><rp>（</rp><rt>ぴぴぷる</rt><rp>）</rp></ruby>~</h1>
+          <p>大好きな人のために、最高のデートで素敵なひと時を。</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="row">
+      <div class="tops-search">
+      <%= form_tag(controller:"submits",action:"search_show") do %>
+        <div class="cp_ipselect cp_sl04">
+          <%= select_tag :area_search, options_for_select({"エリアを選択" => 0, "丸の内エリア（銀座・東京・日本橋）" => "丸の内エリア（銀座・東京・日本橋）", "下町エリア（浅草・上野・押上）" => "下町エリア（浅草・上野・押上）",
+          "六本木エリア（六本木・品川・麻布）" => "六本木エリア（六本木・品川・麻布）", "新宿エリア（新宿・代々木）" => "新宿エリア（新宿・代々木）", "池袋エリア（池袋・赤羽・埼玉）" => "池袋エリア（池袋・赤羽・埼玉）",
+          "渋谷エリア（渋谷・代官山・目黒）" => "渋谷エリア（渋谷・代官山・目黒）", "表参道エリア（原宿・青山）" => "表参道エリア（原宿・青山）", "23区外エリア（吉祥寺・立川）" => "23区外エリア（吉祥寺・立川）",
+          "お台場エリア（豊洲・有明・舞浜）" => "お台場エリア（豊洲・有明・舞浜）", "横浜エリア（みなとみらい・元町中華街）" => "横浜エリア（みなとみらい・元町中華街）",}),:class => "select" %>
+        </div>
+        <div class="cp_ipselect cp_sl04">
+          <%= select_tag :purpose_search, options_for_select({"目的を選択" => 0, "付き合う前" => "付き合う前", "告白" => "告白", "初デート" => "初デート", "定番デート" => "定番デート",
+           "記念日" => "記念日", "誕生日" => "誕生日"}),:class => "select" %>
+        </div>
+
+        <div class="cp_ipselect cp_sl04">
+          <%= select_tag :price_search, options_for_select({"金額を選択" => 0, "5000円以内" => "5000円以内", "5000円~10000円" => "5000円~10000円", "10000円~15000円" => "10000円~15000円", "15000円~20000円" => "15000円~20000円", "20000円以上" => "20000円以上"}),
+          :class => "select" %>
+        </div>
+      <%= submit_tag '検索',:class => "search_button" %>
+      <% end %>
+      </div>
+    </div>
+
+    <section class="second-block container">
+      <div id="navi_page_link">
+        <ul class="clearfix">
+          <li class="clearfix-li-top">条件で探す</li>
+          <a href="#area"><li class="clearfix-li">エリア</li></a>
+          <a href="#purpose"><li class="clearfix-li">目的</li></a>
+        </ul>
+      </div>
+
+      <div id="area">
+        <h2>＝＝エリアで探す＝＝</h2>
+        <nav class="tops-area row">
+          <div class="col-12">
+            <%= link_to("/submits/area/丸の内エリア（銀座・東京・日本橋）") do %>
+            <p>丸の内エリア（銀座・東京・日本橋）</p><% end %>
+            <%= link_to("/submits/area/下町エリア（浅草・上野・押上）") do %>
+            <p>下町エリア（浅草・上野・押上）</p><% end %>
+            <%= link_to("/submits/area/六本木エリア（六本木・品川・麻布）") do %>
+            <p>六本木エリア（六本木・品川・麻布）</p><% end %>
+            <%= link_to("/submits/area/新宿エリア（新宿・代々木）") do %>
+            <p>新宿エリア（新宿・代々木）</p><% end %>
+            <%= link_to("/submits/area/池袋エリア（池袋・赤羽・埼玉）") do %>
+            <p>池袋エリア（池袋・赤羽・埼玉）</p><% end %>
+            <%= link_to("/submits/area/渋谷エリア（渋谷・代官山・目黒）") do %>
+            <p>渋谷エリア（渋谷・代官山・目黒）</p><% end %>
+            <%= link_to("/submits/area/表参道エリア（原宿・青山）") do %>
+            <p>表参道エリア（原宿・青山）</p><% end %>
+            <%= link_to("/submits/area/23区外エリア（吉祥寺・立川）") do %>
+            <p>23区外エリア（吉祥寺・立川）</p><% end %>
+            <%= link_to("/submits/area/お台場エリア（豊洲・有明・舞浜）") do %>
+            <p>お台場エリア（豊洲・有明・舞浜）</p><% end %>
+            <%= link_to("/submits/area/横浜エリア（みなとみらい・元町中華街）") do %>
+            <p>横浜エリア（みなとみらい・元町中華街）</p><% end %>
+          </div>
+        </nav>
+      </div>
+
+      <div id="purpose">
+       <h2>＝＝デートの目的から探す＝＝</h2>
+        <nav class="tops-purpose row">
+          <div class="col-6">
+<!-- 領域をクリックして画面遷移するには link_to で do を入力。指定領域の終わりにend を指定 -->
+            <%= link_to("/submits/purpose/付き合う前") do %>
+            <image src="/assets/before_couple.jpg" class="img-fluid rounded-circle">
+            <h4>付き合う前</h4>
+            <% end %>
+            <p>付き合ってはいないけど、距離を縮めたい！<br>そんな方にオススメのプラン一覧</p>
+          </div>
+          <div class="col-6">
+            <%= link_to("/submits/purpose/告白") do %>
+            <image src="/assets/couple.jpg" class="img-fluid rounded-circle">
+            <h4>告白</h4>
+            <% end %>
+            <p>告白にもってこい！<br>良いムードの中でデートしたい人向けプラン一覧</p>
+          </div>
+          <div class="col-6">
+            <%= link_to("/submits/purpose/初デート") do %>
+            <image src="/assets/new_date.jpg" class="img-fluid rounded-circle">
+            <h4>初デート</h4>
+            <% end %>
+            <p>付き合いたてカップルに最適！<br>手軽に行ける堅実な王道デートプラン一覧</p>
+          </div>
+          <div class="col-6">
+            <%= link_to("/submits/purpose/定番デート") do %>
+            <image src="/assets/date.jpg" class="img-fluid rounded-circle">
+            <h4>定番デート</h4>
+            <% end %>
+            <p>最近流行りのスポットから隠れたスポットまで<br>カップルの定番デート一覧</p>
+          </div>
+          <div class="col-6">
+            <%= link_to("/submits/purpose/記念日") do %>
+            <image src="/assets/anniversary.jpg" class="img-fluid rounded-circle">
+            <h4>記念日</h4>
+            <% end %>
+            <p>大切な記念日を素敵な一日にしたいあなたへ<br>カップルの記念日にもってこいのデート一覧</p>
+          </div>
+          <div class="col-6">
+            <%= link_to("/submits/purpose/誕生日") do %>
+            <image src="/assets/birthday.jpg" class="img-fluid rounded-circle">
+            <h4>🎂誕生日🎂</h4>
+            <% end %>
+            <p>恋人にとって忘れられない誕生日にしたい！<br>恋人の誕生日向けデートプラン一覧</p>
+          </div>
+        </nav>
+      </div>
+
+    </section>
+  </div>
+
+</div>
+
+
+
+<script>
+ $(function(){
+   $('a').click(function(){
+     var id = $(this).attr('href');
+     var position = $(id).offset().top;
+     $('html,body').animate({
+       'scrollTop':position
+     },500);
+   })
+ })
+
+</script>

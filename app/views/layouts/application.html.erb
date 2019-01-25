@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery-3.3.1' %>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <header class="header-nav">
+          <nav class="header-nav-home"><a href="/tops/index">PiPiple(β版)</a></nav>
+        </header>
+      </div>
+    </div>
+
+    <%= yield %>
+  </body>
+
+  <footer>
+    <br><br>
+    <h6>ご意見ご要望など、お問い合わせはこちら</h6>
+    <h6>pipiple.official@gmail.com</h6><br><br>
+    <p>Copyright © PiPiple All Rights Reserved.</p>
+  </footer>
+</html>

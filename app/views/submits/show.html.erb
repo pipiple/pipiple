@@ -1,0 +1,77 @@
+<div class="submits show">
+
+  <div class="plan-description container">
+    <div class="contents-top">
+      <div class="contents-name">
+        <h2><%= @submit.name %></h2>
+      </div>
+      <div class="contents-overview">
+        <p><%= @submit.overview %></p>
+      </div>
+    </div>
+    <!-- lunch -->
+    <div class="contents">
+      <p class="each_title">ランチ</p>
+      <p class="title_title"><span><%= @submit.lunch %></span></p>
+      <div class="row each_contents">
+        <div class="col-4 px-0">
+          <%= image_tag @submit.lunch_image.to_s, :class => "img-fluid" %>
+        </div>
+        <div class="col-8 each_body">
+          <p><%= @submit.lunch_body %></p>
+          <%= link_to(@submit.lunch_URL) do %>
+          <strong>お店の予約はこちら</strong>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <!-- afternoon -->
+    <div class="contents">
+      <p class="each_title">スポット①</p>
+      <p class="title_title"><span><%= @submit.afternoon %></span></p>
+      <div class="row each_contents">
+        <div class="col-4 px-0">
+          <%= image_tag @submit.afternoon_image.to_s, :class => "img-fluid" %>
+        </div>
+        <div class="col-8 each_body">
+          <p><%= @submit.afternoon_body %></p>
+          <%= link_to(@submit.afternoon_URL) do %>
+          <strong>詳細はこちら</strong>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <!-- evening -->
+    <div class="contents">
+      <p class="each_title">スポット② </p>
+      <p class="title_title"><span><%= @submit.evening %></span></p>
+      <div class="row each_contents">
+        <div class="col-4 px-0">
+          <%= image_tag @submit.evening_image.to_s, :class => "img-fluid" %>
+        </div>
+        <div class="col-8 each_body">
+          <p><%= @submit.evening_body %></p>
+          <%= link_to(@submit.evening_URL) do %>
+          <strong>詳細はこちら</strong>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <!-- dinner -->
+    <div class="contents">
+      <p class="each_title">ディナー</p>
+      <p class="title_title"><span><%= @submit.dinner %></span></p>
+      <div class="row each_contents">
+        <div class="col-4 px-0">
+          <%= image_tag @submit.dinner_image.to_s, :class => "img-fluid" %>
+        </div>
+        <div class="col-8 each_body">
+          <p><%= @submit.dinner_body %></p>
+          <%= link_to(@submit.dinner_URL) do %>
+          <strong>お店の予約はこちら</strong>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

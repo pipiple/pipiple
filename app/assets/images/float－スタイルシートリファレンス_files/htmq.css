@@ -1,0 +1,219 @@
+@charset "utf-8";
+
+/*タイプセレクタはダメ。必ずidかclassをつけて*/
+/*基本的なレイアウト*/
+div#bigbox				{margin:0 auto; width:1100px;}
+#content_left			{width:750px; float:left; padding:0px 0px 0px 0px;}
+#content_right			{width:300px; float:right; padding:0px 0px 0px 0px;}
+div#nowpage strong		{font-size:120%;}
+div#gaiyou				{padding:10px; background:#cccccc;}
+div#kanren				{padding:10px; background:#F3F1F3; font-size:90%;}
+div#abouthtmq			{text-align:center; margin:20px; font-size:80%;}
+div#copy				{color:#999999; font-size:80%; font-style:normal; text-align:center;}
+div#footerpr			{font-size:70%; margin:5px;}
+
+/*ヘッダ*/
+.header_logo			{float:left;}
+.logo_img				{border:0; width:135px; height:45px;}
+.header_search			{float:right; padding:10px 10px 0px 0px;}
+
+/*トップページ*/
+.toppage_lead			{float:right; font-size:14px;}
+.toppage_search			{margin:0; padding-left:230px;}
+.toppage_search form	{}
+
+.toppage_header_ad		{float:left; margin:0px 0px 0px 10px; width:800px; height:110px;}
+.toppage_footer_ad		{margin:0px 0px 0px 40px;}
+
+#toppage_menu			{background-image:url(images/rainbow.gif); background-repeat:no-repeat; margin:10px 0px 0px 0px; padding-left:200px; line-height:1.3; font-weight:bold;}
+#toppage_menu ul		{list-style-type:none; line-height:1.5;}
+
+
+/*メインメニュー*/
+.mainmenu				{font-size:85%; font-weight:bold; clear:both;}
+.mainmenu div			{width:180px; float:left;}
+.mainmenu div.w200		{width:200px;}
+.mainmenu span			{display:block;}
+.mainmenu span a		{display:block; padding:4px;}
+
+/*ヘッダ*/
+h1.header1				{margin:2px;}
+h2.header2				{text-align:left; color:#000080; background-color:#eef3f9; margin-top:4px; margin-bottom:10px; padding:3px; font-size:120%; border-top:5px solid; border-bottom:5px solid;}
+h3.header3				{text-align:left; color:#000080; margin-bottom:2px; font-size:90%;}
+h4.header4				{margin:2px; font-size:90%;}
+h5.itemsheader5			{margin:10px 0px 0px 5px;}
+
+/*値*/
+.atai					{padding:10px; background:#E7F1ED; font-size:90%;}
+.atai dl				{margin:0px; line-height:150%;}
+.atai dl dt				{font-weight:bold;}
+
+/*使用例*/
+.siyorei_source			{padding:10px; background:#F0F0E8;}
+.siyorei_source pre		{line-height:1.2; margin:0;}
+.siyorei_source h4		{padding-bottom:5px;}
+.siyorei_arrow			{padding:0px; font-size:80%;}
+.siyorei_browse			{padding:10px; background:#F0F0E8;}
+
+div.nowpage				{padding:5px;}
+p.honbun				{line-height:150%; text-indent:1em;}
+
+.lh180					{line-height:1.8}
+.lh150					{line-height:1.5}
+.lh120					{line-height:1.2}
+.dlstyle				{line-height:1.5}
+.dlstyle dt				{font-weight:bold; margin-top:5px;}
+
+.memo					{line-height:150%; font-size:80%;}
+.chu					{font-size:80%; color:#ff0000;}
+.lrg					{font-size:120%;}
+.smll					{font-size:90%;}
+.sml					{font-size:80%;}
+.smls					{font-size:70%;}
+.cm						{text-align:center; margin:10px;}
+.gry					{color:#666666;}
+
+/*リンク*/
+a:link					{color:#0000ff;}
+a:visited				{color:#800080;}
+a:hover					{color:#ff0000;}
+a:active				{color:#ff0000;}
+
+a.siro					{text-decoration:none;}
+a.siro:link				{color:#ffffff;}
+a.siro:visited			{color:#000080;}
+a.siro:hover			{color:#000000; text-decoration:underline;}
+a.siro:hover			{background-color:#ffCC00;}
+a.siro:active			{color:#0000ff;}
+
+a.pagemenu				{text-decoration:none;}
+a.pagemenu:link			{color:#0000ff;}
+a.pagemenu:visited		{color:#0000ff;}
+a.pagemenu:hover		{color:#000000;text-decoration:underline;}
+a.pagemenu:hover		{background-color:#66ccff;}
+a.pagemenu:active		{color:#0000ff;}
+
+a.pagemenu2				{display:block; width:100%; color:#0000ff; text-decoration:none;}
+a.pagemenu2:link		{color:#0000ff;}
+a.pagemenu2:visited		{color:#0000ff;}
+a.pagemenu2:hover		{background-color:#66ccff; color:#000000;}
+
+div.gopagetop			{text-align:right; font-size:small; padding:2px 0px 10px 0px; clear:both;}
+div.gopagetop a			{text-decoration:none;}
+div.gopagetop a:link	{color:#0000ff;}
+div.gopagetop a:visited	{color:#0000ff;}
+div.gopagetop a:hover	{color:#000000; text-decoration: underline;}
+div.gopagetop a:hover	{background-color:#ffCC00;}
+div.gopagetop a:active	{color:#ff0000;}
+
+/*前へ次へ*/
+table.prevnext			{width:100%; margin:20px 0px 30px 0px; font-size:90%; table-layout:fixed;}
+table.prevnext td a		{border:1px solid #333333; padding:5px; background-color:#FFFF99;}
+
+div.procedure			{background-color:#eeeedd; margin:20px 0px 20px 0px; padding:20px; border-radius:1em;}
+div.procedure h3		{text-align:center; font-size:90%;}
+div.procedure li		{margin:20px 0px 20px 0px;}
+
+/*アドセンス*/
+/*.
+ga						{margin:0px 0px 20px 0px; text-align:left;}
+*/
+.ga						{width:336px; margin:5px auto 10px auto; text-align:center;}
+.ga_right				{margin:0px auto 20px auto; text-align:center;}
+.adlabel				{font-size:10px; color:#666666; margin:10px 0px 0px 0px; display:none;}
+
+/*スポンサー右*/
+h5.sponsors				{display:none; font-size:12px; text-align:center; background-color:#cccccc; color:#ffffff; border-radius:6px; margin:0px 0px 8px 0px;}
+#sponsors_right ul		{margin:0; padding:0; list-style-type:none;}
+#sponsors_right ul li	{float:left; width:50%; text-align:center;}
+#sponsors_right ul li a	{display:block; text-decoration:none; color:#666666;}
+.sps_bnr_125_125		{width:125px; height:125px; border:0;}
+.sps_freetext			{margin:0px 15px 20px 15px; text-align:left; font-size:12px;}
+.adinfo					{margin:20px 0px 0px 15px; font-size:12px;}
+
+
+/**************************************
+インデックスページ
+***************************************/
+h4.itemsheader_html		{background-color:#000080; color:#ffffff; padding:4px; margin:0px 0px 0px 0px;}
+h4.itemsheader_css		{background-color:#660066; color:#ffffff; padding:4px; margin:0px 0px 0px 0px;}
+h4.itemsheader_js		{background-color:#006600; color:#ffffff; padding:4px; margin:0px 0px 0px 0px;}
+
+div.itemsbody			{background-color:#eeeeee; padding:10px 10px 10px 10px;}
+div.w3curl				{font-size:70%; margin:15px 0px 0px 5px; padding:10px; line-height:1.5; background-color:#dddddd; border:1px dotted #999999;}
+
+/*サブメニュー*/
+table.submenu			{border-collapse:collapse; font-size:85%; table-layout:fixed; width:100%; margin-bottom:10px;}
+table.submenu th		{border:1px #333333 solid; background-color:#ecf0e8; white-space:nowrap;}
+td.js_yajirusi			{font-size:16px; width:16px; padding:0px;}
+
+
+/**************************************
+テーブルのスタイル
+***************************************/
+/*基本解説*/
+.kihon					{border-collapse:collapse; width:100%; border:1px solid #333333; font-size:90%; line-height:1.5;}
+.kihon td				{border:1px solid #333333; padding:5px;}
+.kihon th				{border:1px solid #333333; padding:5px; background-color:#CCCCFF;}
+tr.kihonh th			{background-color:#333399; color:#FFFFFF;}
+
+/*データ管理*/
+table.kanri				{border-collapse:collapse; width:100%; margin:20px auto; font-size:90%;}
+table.kanri th			{background-color:#ffcc00; border:solid #000000 1px; padding:2px; white-space:nowrap;}
+table.kanri td			{background-color:#ffffcc; border:solid #000000 1px; padding:2px;}
+
+/*パンダ*/
+h4.panda				{text-align:center; font-size:150%; margin:20px;}
+.pandatable				{width:100%; border:0;}
+.pandatable td			{background-color:#eeeeee; padding:12px; vertical-align:top; }
+.pandatable th			{background-color:#D8D8D8; padding:12px; vertical-align:top; text-align:right; width:100px; font-weight:normal;}
+
+/*サーバー比較*/
+table.server			{border-collapse:collapse; width:100%; font-size:90%; border-top:solid #000000 1px; line-height:150%;}
+table.server th			{background-color:#CCCCFF; border-top:solid #000000 1px; border-bottom:solid #000000 1px; border-left:dotted #000000 1px; border-right:dotted #000000 1px; padding:4px; white-space:nowrap;}
+table.server td			{background-color:#EFECF4; border-top:solid #000000 1px; border-bottom:solid #000000 1px; border-left:dotted #000000 1px; border-right:dotted #000000 1px; padding:4px;}
+tr.theader th			{background-color:#336699; border-top:solid #000000 1px; border-bottom:solid #000000 1px; border-left:dotted #000000 1px; border-right:dotted #000000 1px; padding:4px; color:#ffffff; white-space:nowrap;}
+table.server th img		{width:24px; height:24px; vertical-align:bottom; margin:0px 2px 0px 0px; cursor:pointer;}
+
+table.serverd			{border-collapse:collapse; width:100%; font-size:80%; border-top:solid #000000 1px; line-height:120%;}
+table.serverd th		{border:solid #ffffff 1px; padding:2px; width:80px; font-weight:normal;}
+table.serverd td		{border:solid #ffffff 1px; padding:2px;}
+
+table.womdata			{border-collapse:collapse; font-size:80%; border:0px; margin:5px 0px 0px 0px; line-height:120%;}
+table.womdata th		{border:0px; padding:1px; width:60px; font-weight:normal; text-align:left; background-color:#EFECF4;}
+table.womdata td		{border:0px; padding:1px; background-color:#EFECF4;}
+
+/*スマホ*/
+#kirikae_btn			{display:none;}
+
+
+/**************************************
+チュートリアルのスタイル
+***************************************/
+.greet					{border:1px solid #999999; background-color:#CCCCFF; border-radius:1em; padding:10px; font-size:80%; margin:10px 0px 0px 0px;}
+.greet h5				{margin:0px; font-size:100%;}
+.download				{border:1px solid #999999; background-color:#ffdddd; border-radius:1em; padding:10px; font-size:80%; text-align:center;}
+.tutorialmenu			{font-size:95%; line-height:1.2;}
+.tutorialheader 		{background-color:#003366; color:#ffffff; padding:5px; font-size:95%;}
+.sectitle				{font-size:80%; font-weight:bold; color:#000080;}
+/*.sectitle				{font-size:80%; font-weight:bold; color:#ffffff; background-color:navy; padding:5px; border-radius:1em; text-align:center;}*/
+.kakomi					{background-color:#eeeeee; padding:10px;}
+.kakomi h5				{margin:0px;}
+.matome					{font-size:90%; border:1px dotted #666666; background-color:#FFFFCC; padding:10px;}
+.matome h5				{margin:0px 0px 0px 10px;}
+.matome ol				{margin:0px;}
+.omake					{background-color:#CCFFCC; padding-bottom:2px;}
+.figview				{max-width:320px;}
+.devstep				{font-size:70%; margin:0px 0px 0px 40px; text-decoration:none;}
+.devstep a				{text-decoration:none;}
+.devstep a:before 		{content:"▶";}
+.kakuninlink a			{font-size:70%; text-decoration:none;}
+.kakuninlink a:before 	{content:"▶";}
+.source					{font-size:80%; margin:10px; padding:10px; background-color:#CCCCFF; border-radius:0.5em; }
+pre .source				{font-size:100%; line-height:1.2;}
+pre .source span		{font-size:100%; line-height:1.2;}
+.sourcename				{text-align:right; margin:-11px 0px 0px 0px;}
+.sourcename span		{padding:2px; margin:0px; background-color:#999; color:#FFFFFF; font-size:x-small; font-weight:bold;}
+.addsource				{background-color:#FFFF00;}
+.phpsource				{color:#990033;}
+.akasource				{color:red;}
