@@ -1,10 +1,10 @@
 class Submit < ApplicationRecord
   has_many :submit_purposes, dependent: :destroy
   has_many :purposes, :through => :submit_purposes
-  mount_uploader :lunch_image, ImageUploader
-  mount_uploader :afternoon_image, ImageUploader
-  mount_uploader :evening_image, ImageUploader
-  mount_uploader :dinner_image, ImageUploader
+  mount_uploader :lunch_image, AvatarUploader
+  mount_uploader :afternoon_image, AvatarUploader
+  mount_uploader :evening_image, AvatarUploader
+  mount_uploader :dinner_image, AvatarUploader
 
   def self.search(area,purpose,price)
      search = self.all

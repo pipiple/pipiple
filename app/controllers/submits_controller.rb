@@ -79,7 +79,7 @@ class SubmitsController < ApplicationController
     redirect_to action: "index"
   end
 
-private
+  private
   def submit_params
     params.require(:submit).permit(:name, :area, :mood,:price, :overview, :lunch, :lunch_body,
        :lunch_image, :lunch_URL, :afternoon, :afternoon_body, :afternoon_image, :afternoon_URL,

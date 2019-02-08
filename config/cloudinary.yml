@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hftjeqm5p
+  api_key: '863876753595825'
+  api_secret: AeuhLFmJip2FfI-aXAF4zTu0oeI
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: hftjeqm5p
+  api_key: '863876753595825'
+  api_secret: AeuhLFmJip2FfI-aXAF4zTu0oeI
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: hftjeqm5p
+  api_key: '863876753595825'
+  api_secret: AeuhLFmJip2FfI-aXAF4zTu0oeI
+  enhance_image_tag: true
+  static_file_support: false
