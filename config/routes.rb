@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   root 'submits#index'
   resources :submits
 
-  get 'submits/new' => 'submits#new'
+  get 'newplan' => 'submits#new'
   post 'submits/new' => 'submits#create'
 
   get 'submits/search_show/' => 'submits#search_show'
