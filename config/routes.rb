@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   registrations: 'users/registrations'
 }
   get 'submits/index' => 'submits#index'
-
-  root 'submits#index'
   resources :submits
 
   get 'newplan' => 'submits#new'
@@ -23,8 +21,7 @@ Rails.application.routes.draw do
   get 'submits/purpose/:search' => 'submits#purpose_search'
   get 'submits/mood/:search' => 'submits#mood_search'
 
-
-  post "/tops/index" => "tops#index"
   get 'tops/index' => 'tops#index'
+  root 'tops#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
