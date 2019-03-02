@@ -92,12 +92,15 @@
   .description li {
     list-style: none;
     float: left;
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .description {
     padding: 0px 20px;
     position: relative;
+  }
+  .description_ap {
+    display: inline-block;
   }
 
   .description p {
@@ -160,15 +163,33 @@
     .search_button {
       width: 20%;
     }
-    
+
     .planplan {
       width: 100%;
       height: auto;
-      display: block;
+      display: inline-block;
+      margin-bottom: 10px;
+      border: 5px solid #EFEFEF;
+    }
+
+    .description h4 {
+      padding-top: 3px;
+      margin-bottom: 3px;
+    }
+    .description p {
+      font-size: 12px;
+    }
+
+    .description_ap {
+      display: inline-block;
+    }
+    .description li {
+      font-size: 10px;
     }
 
     .img-thumbnail {
       width: 100%;
+      border-radius: 33px !important;
     }
 
     .loopslider {
@@ -177,6 +198,10 @@
     }
     .loopslider ul li {
       padding-top: 10px;
+    }
+
+    .show_page {
+      display: block;
     }
   }
 
