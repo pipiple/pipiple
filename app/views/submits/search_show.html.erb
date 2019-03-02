@@ -5,17 +5,17 @@
     <div class="row">
       <div class="tops-search">
         <%= form_tag(controller:"submits",action:"search_show") do %>
-        <div class="cp_ipselect cp_sl04">
+        <div class="cp_ipselect cp_sl04 select_a">
           <%= select_tag :area_search, options_for_select({"エリアを選択" => 0, "丸の内エリア（銀座・東京・日本橋）" => "丸の内エリア（銀座・東京・日本橋）", "下町エリア（浅草・上野・押上）" => "下町エリア（浅草・上野・押上）",
           "六本木エリア（六本木・品川・麻布）" => "六本木エリア（六本木・品川・麻布）", "新宿エリア（新宿・代々木）" => "新宿エリア（新宿・代々木）", "池袋エリア（池袋・赤羽・埼玉）" => "池袋エリア（池袋・赤羽・埼玉）",
           "渋谷エリア（渋谷・代官山・目黒）" => "渋谷エリア（渋谷・代官山・目黒）", "表参道エリア（原宿・青山）" => "表参道エリア（原宿・青山）", "23区外エリア（吉祥寺・立川）" => "23区外エリア（吉祥寺・立川）",
           "お台場エリア（豊洲・有明・舞浜）" => "お台場エリア（豊洲・有明・舞浜）", "横浜エリア（みなとみらい・元町中華街）" => "横浜エリア（みなとみらい・元町中華街）",}),:class => "select" %>
         </div>
-        <div class="cp_ipselect cp_sl04">
+        <div class="cp_ipselect cp_sl04 select_pm">
           <%= select_tag :purpose_search, options_for_select({"目的を選択" => 0, "付き合う前" => "付き合う前", "告白" => "告白", "初デート" => "初デート", "定番デート" => "定番デート",
            "記念日" => "記念日", "誕生日" => "誕生日"}),:class => "select" %>
         </div>
-        <div class="cp_ipselect cp_sl04">
+        <div class="cp_ipselect cp_sl04 select_pm">
           <%= select_tag :price_search, options_for_select({"金額を選択" => 0, "5000円以内" => "5000円以内", "5000円~10000円" => "5000円~10000円", "10000円~15000円" => "10000円~15000円", "15000円~20000円" => "15000円~20000円", "20000円以上" => "20000円以上"}),
           :class => "select" %>
         </div>
@@ -26,8 +26,8 @@
 
 
     <% @submits.each do |submit| %>
-    <div class="planplan" style="height:200px; ">
-      <div class="img-thumbnail bg-light" style="width:240px">
+    <div class="planplan">
+      <div class="img-thumbnail bg-light">
         <div class="loopslider">
           <ul>
             <li><%= image_tag submit.lunch_image.to_s, :height => 130 %></li>

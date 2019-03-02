@@ -79,7 +79,7 @@
     display: flex;
     margin: 0 auto;
     width: 900px;
-
+    height: 200px;
     border-radius: 38px;
   }
 
@@ -146,6 +146,38 @@
 
   .img-thumbnail {
     border-radius: 30px !important;
+    width: 240px;
+  }
+
+  /*スマホ用*/
+  @media screen and (max-width: 480px) {
+    .select_a {
+      width: 100%;
+    }
+    .select_pm {
+      width: 40%;
+    }
+    .search_button {
+      width: 20%;
+    }
+    
+    .planplan {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .img-thumbnail {
+      width: 100%;
+    }
+
+    .loopslider {
+      width: 100%;
+      height: 150px;
+    }
+    .loopslider ul li {
+      padding-top: 10px;
+    }
   }
 
 }
