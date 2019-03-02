@@ -1,0 +1,162 @@
+@charset "UTF-8";
+/* line 1, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 5, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+.submits.search_show {
+  font-family: serif;
+  /* 検索 */
+  /* 検索　END */
+  /* 以降検索表示 */
+  /*画像のループスライダー*/
+  /*画像のループスライダー END*/
+}
+/* line 8, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+.submits.search_show .tops-search {
+  text-align: center;
+  overflow: hidden;
+  width: auto;
+  margin: 2em auto;
+}
+/* line 15, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+.submits.search_show .cp_ipselect {
+  overflow: hidden;
+  width: auto;
+  text-align: center;
+  float: left;
+}
+/* line 21, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+.submits.search_show .select {
+  width: 100%;
+  padding-right: 1em;
+  cursor: pointer;
+  text-indent: 0.01px;
+  text-overflow: ellipsis;
+  border: none;
+  outline: none;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+}
+/* line 35, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+.submits.search_show .select::-ms-expand {
+  display: none;
+}
+/* line 38, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+.submits.search_show .cp_ipselect.cp_sl04 {
+  position: relative;
+  border-radius: 2px;
+  border: 2px solid #da3c41;
+  border-radius: 50px;
+  background: #ffffff;
+}
+/* line 45, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+.submits.search_show .cp_ipselect.cp_sl04::before {
+  position: absolute;
+  top: 0.8em;
+  right: 0.8em;
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #da3c41;
+  pointer-events: none;
+}
+/* line 58, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+.submits.search_show .select {
+  padding: 5px 35px 5px 8px;
+  color: #da3c41;
+}
+/* line 62, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+.submits.search_show .search_button {
+  display: block;
+  width: 80px;
+  color: #fff;
+  text-align: center;
+  background-color: #da3c41;
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 5px;
+  border: 2px solid #da3c41;
+}
+/* line 77, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+.submits.search_show .planplan {
+  border: 8px solid #EFEFEF;
+  display: flex;
+  margin: 0 auto;
+  width: 900px;
+  border-radius: 38px;
+}
+/* line 86, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+.submits.search_show .description h4 {
+  text-align: center;
+  font-weight: 700;
+  padding-top: 10px;
+}
+/* line 92, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+.submits.search_show .description li {
+  list-style: none;
+  float: left;
+  font-size: 11px;
+}
+/* line 98, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+.submits.search_show .description {
+  padding: 0px 20px;
+  position: relative;
+}
+/* line 103, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+.submits.search_show .description p {
+  color: grey;
+  border-bottom: 2px solid #EFEFEF;
+}
+/* line 108, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+.submits.search_show .description_mood {
+  padding: 5px;
+}
+/* line 112, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+.submits.search_show .show_page {
+  text-align: right !important;
+}
+/* line 117, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+.submits.search_show .loopslider {
+  margin: 0 auto;
+  width: 230px;
+  height: 200px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+/* line 126, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+.submits.search_show .loopslider ul {
+  height: 180px;
+  float: left;
+  display: inline;
+  overflow: hidden;
+}
+/* line 133, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+.submits.search_show .loopslider ul li {
+  width: auto;
+  float: left;
+  display: inline;
+  overflow: hidden;
+  padding-top: 30px;
+  padding-right: 2px;
+}
+/* line 143, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+.submits.search_show .planplan p {
+  display: inline;
+}
+/* line 147, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/search_show.scss */
+.submits.search_show .img-thumbnail {
+  border-radius: 30px !important;
+}
+
+/* 以降検索表示 END */

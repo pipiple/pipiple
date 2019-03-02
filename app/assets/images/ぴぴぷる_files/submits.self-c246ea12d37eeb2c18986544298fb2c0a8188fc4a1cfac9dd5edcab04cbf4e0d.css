@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/* line 4, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 10, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits.scss */
+.submits_index .sample {
+  color: red;
+}
+/* line 14, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits.scss */
+.submits_index .field {
+  border-bottom: 1px solid #EFEFEF;
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+/* line 20, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits.scss */
+.submits_index .submits_index .hoge {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background: #668ad8;
+  /*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+/* line 28, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits.scss */
+.submits_index .submits_index .hoge:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  /*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+  /*影を小さく*/
+  border-bottom: none;
+}

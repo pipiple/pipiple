@@ -1,0 +1,97 @@
+@charset "UTF-8";
+/* line 1, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/show.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 5, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/show.scss */
+.submits.show {
+  font-family: serif;
+  /* 以下詳細画面 */
+}
+/* line 8, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/show.scss */
+.submits.show .contents-name {
+  border-radius: 20px;
+  background-color: #FFD5EC;
+  display: inline-block;
+  margin: 0 auto;
+  box-shadow: 3px 27px 20px 8px #FFF inset;
+}
+/* line 16, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/show.scss */
+.submits.show .contents-name h2 {
+  font-weight: 800;
+  padding: 5px 10px;
+  text-shadow: 0px 0px 20px #FF69A3;
+}
+/* line 22, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/show.scss */
+.submits.show .contents-overview {
+  background: rgba(255, 10, 10, 0.3);
+  box-shadow: 0px 5px 45px 15px #FFF inset;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 5px;
+}
+/* line 30, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/show.scss */
+.submits.show .contents-overview p {
+  font-size: 18px;
+  width: 90%;
+  margin: 5px auto;
+  padding: 10px;
+}
+/* line 37, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/show.scss */
+.submits.show .plan-description {
+  text-align: center;
+}
+/* line 41, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/show.scss */
+.submits.show .contents-top {
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+/* line 46, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/show.scss */
+.submits.show .contents {
+  padding: 10px 10px 20px 10px;
+  border-top: 2px dotted #CCCCCC;
+  margin-bottom: 10px;
+}
+/* line 52, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/show.scss */
+.submits.show .each_title {
+  text-align: left;
+  float: left;
+  font-size: 20px;
+  padding: 2px;
+  border: 6px solid rgba(240, 10, 10, 0.2);
+  margin: 0 auto;
+  border-radius: 30px;
+}
+/* line 63, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/show.scss */
+.submits.show .title_title span {
+  border-bottom: double 6px #87CEFA;
+  font-size: 28px;
+}
+/* line 68, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/show.scss */
+.submits.show .each_contents {
+  padding-top: 15px;
+}
+/* line 72, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/show.scss */
+.submits.show .img-fluid {
+  border: 10px ridge #cfcfcf !important;
+  height: 200px !important;
+}
+/* line 77, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/show.scss */
+.submits.show .each_body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: grey;
+}
+/* line 86, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/show.scss */
+.submits.show .each_body p {
+  text-align: left !important;
+}
+/* line 90, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/submits/show.scss */
+.submits.show .each_body strong {
+  font-size: 18px;
+}

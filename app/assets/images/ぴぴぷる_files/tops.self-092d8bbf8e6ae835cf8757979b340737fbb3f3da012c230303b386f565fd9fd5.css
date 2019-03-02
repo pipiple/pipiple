@@ -1,0 +1,264 @@
+@charset "UTF-8";
+/* line 4, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.header-nav {
+  width: 100%;
+  height: 40px;
+  background-color: #FFC0CB;
+  display: flex;
+  flex-direction: row;
+  font-style: oblique;
+  align-items: center;
+  font-family: serif;
+}
+
+/* line 19, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.header-nav nav {
+  margin-left: 3%;
+}
+
+/* line 23, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index {
+  font-family: serif;
+  /* head-block */
+  /*   head-block End   */
+  /* 検索 */
+  /* 検索　END */
+  /*   second-block   */
+  /*   second-block End   */
+  /*スマホ用*/
+  /*スマホ用-終わり*/
+}
+/* line 26, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .head-block {
+  background-image: url("first-back.jpg");
+  background-size: cover;
+  background-position: 0 75%;
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* line 38, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .title-container {
+  position: absolute;
+  margin-top: 140px;
+  text-align: center;
+}
+/* line 44, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .title-container ruby, .tops.index h1 {
+  font-size: 60px;
+  font-family: serif;
+  font-style: oblique;
+  color: #BDBDBD;
+}
+/* line 50, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index rt {
+  font-size: 20px !important;
+}
+/* line 53, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .title-container p {
+  font-style: oblique;
+  font-size: 15px;
+  font-family: serif;
+  color: #BDBDBD;
+}
+/* line 63, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .tops-search {
+  text-align: center;
+  overflow: hidden;
+  width: auto;
+  margin: 2em auto;
+}
+/* line 70, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .cp_ipselect {
+  overflow: hidden;
+  width: auto;
+  text-align: center;
+  float: left;
+}
+/* line 76, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .select {
+  width: 100%;
+  padding-right: 1em;
+  cursor: pointer;
+  text-indent: 0.01px;
+  text-overflow: ellipsis;
+  border: none;
+  outline: none;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+}
+/* line 90, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .select::-ms-expand {
+  display: none;
+}
+/* line 93, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .cp_ipselect.cp_sl04 {
+  position: relative;
+  border-radius: 2px;
+  border: 2px solid #da3c41;
+  border-radius: 50px;
+  background: #ffffff;
+}
+/* line 100, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .cp_ipselect.cp_sl04::before {
+  position: absolute;
+  top: 0.8em;
+  right: 0.8em;
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #da3c41;
+  pointer-events: none;
+}
+/* line 113, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .select {
+  padding: 5px 35px 5px 8px;
+  color: #da3c41;
+}
+/* line 117, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .search_button {
+  display: block;
+  width: 80px;
+  color: #fff;
+  text-align: center;
+  background-color: #da3c41;
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 5px;
+  border: 2px solid #da3c41;
+}
+/* line 132, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index #navi_page_link {
+  text-align: center;
+}
+/* line 136, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index #navi_page_link li {
+  padding: 5px 0px;
+}
+/* line 140, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .clearfix {
+  padding: 0.2em 0.5em;
+  margin: 2em 0;
+  color: #565656;
+  background: #ffeaea;
+  box-shadow: 0px 0px 0px 10px #ffeaea;
+  border: dashed 2px #ffc3c3;
+  border-radius: 8px;
+  width: 65%;
+  display: inline-block;
+}
+/* line 153, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .clearfix li {
+  list-style: none;
+  width: 50%;
+  display: table-cell;
+  vertical-align: middle;
+  border: solid 3px white;
+  box-sizing: border-box;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 700;
+}
+/* line 166, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .clearfix li:hover {
+  background-color: #FFD9D9;
+}
+/* line 170, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .clearfix a:hover {
+  color: blue;
+}
+/* line 174, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .second-block h2 {
+  text-align: center;
+  color: #A4A4A4;
+}
+/* line 179, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .tops-area {
+  padding: 30px;
+  border-bottom: 1px solid #EFEFEF;
+  margin-bottom: 50px;
+}
+/* line 185, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .tops-area p {
+  margin-right: 2%;
+  float: left;
+}
+/* line 190, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .tops-purpose {
+  padding: 30px;
+  margin-bottom: 50px;
+}
+/* line 196, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .tops-purpose h4 {
+  text-align: center;
+  padding-top: 5px;
+}
+/* line 201, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .tops-purpose p {
+  text-align: center;
+}
+/* line 205, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+.tops.index .img-fluid {
+  width: 100% !important;
+}
+@media screen and (max-width: 480px) {
+  /* line 212, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+  .tops.index .head-block {
+    height: 150px;
+  }
+  /* line 215, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+  .tops.index .title-container {
+    margin-top: 40px;
+    line-height: 3px;
+  }
+  /* line 219, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+  .tops.index .title-container ruby, .tops.index h1 {
+    font-size: 30px;
+  }
+  /* line 222, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+  .tops.index rt {
+    font-size: 10px !important;
+  }
+  /* line 225, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+  .tops.index .title-container p {
+    font-size: 12px;
+  }
+  /* line 228, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+  .tops.index .second-block h2 {
+    font-size: 24px;
+  }
+  /* line 232, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+  .tops.index .clearfix li {
+    width: 180px;
+    line-height: 0;
+  }
+}
+
+/* line 243, /Users/shinjimatsuoka/Desktop/dateplan/app/assets/stylesheets/tops.scss */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 30px;
+  background-color: white;
+  font-size: 12px;
+  color: #A4A4A4;
+  font-family: serif;
+  border-top: 1px solid #EFEFEF;
+}
