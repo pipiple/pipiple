@@ -178,7 +178,8 @@
       margin-bottom: 4px;
       border-bottom: 2px solid;
       border-bottom-color: rgba(255,10,10,0.2);
-      display: inline-block;
+
+      display: inline;
     }
     .description_n {
       text-align: center;
@@ -193,9 +194,13 @@
     .description li {
       font-size: 10px;
     }
+    .description_mood {
+      padding-bottom: 0px;
+    }
 
     .description_mood li {
       display: block;
+      padding-top: 5px;
     }
 
     .img-thumbnail {
@@ -218,6 +223,8 @@
     .show_page {
       display: block;
       font-weight: 700;
+      padding-bottom: 5px;
+      font-size: 18px;
     }
   }
 
