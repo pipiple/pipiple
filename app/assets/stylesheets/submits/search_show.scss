@@ -152,6 +152,7 @@
     width: 240px;
   }
 
+
   /*スマホ用*/
   @media screen and (max-width: 480px) {
     .select_a {
@@ -174,7 +175,13 @@
 
     .description h4 {
       padding-top: 3px;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
+      border-bottom: 2px solid;
+      border-bottom-color: rgba(255,10,10,0.2);
+      display: inline-block;
+    }
+    .description_n {
+      text-align: center;
     }
     .description p {
       font-size: 12px;
@@ -185,6 +192,10 @@
     }
     .description li {
       font-size: 10px;
+    }
+
+    .description_mood li {
+      display: block;
     }
 
     .img-thumbnail {
@@ -200,8 +211,13 @@
       padding-top: 10px;
     }
 
+    .description_mood::after {
+      content: "\A";
+      white-space: pre;
+    }
     .show_page {
       display: block;
+      font-weight: 700;
     }
   }
 

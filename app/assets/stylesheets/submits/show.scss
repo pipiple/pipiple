@@ -91,4 +91,48 @@
     font-size: 18px;
   }
 
+    @media screen and (max-width: 480px) {
+      .contents {
+        padding: 10px;
+        margin-bottom: 0px;
+      }
+      .contents-name h2 {
+        font-size: 24px;
+      }
+      .contents-overview p {
+        font-size: 12px;
+        width: 100%;
+      }
+
+      .title_title {
+        margin-bottom: 0px;
+      }
+      .title_title span {
+        font-size: 18px;
+      }
+      .each_title {
+        font-size: 14px;
+        border: 3px solid rgba(240,10,10,0.2);
+      }
+      .img-fluid {
+        border: 5px ridge #cfcfcf !important;
+        height: 100px !important;
+      }
+      .each_contents {
+        display: inline-block;
+        padding-top: 5px;
+      }
+      .each_body {
+        padding-top: 5px;
+      }
+      .each_body p {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+      .each_body strong {
+        font-size: 18px;
+      }
+
+    }
+
 }

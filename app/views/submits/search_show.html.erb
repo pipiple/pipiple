@@ -38,7 +38,9 @@
         </div>
       </div>
       <div class="description">
-        <h4><%= submit.name %></h4>
+        <div class="description_n">
+          <h4><%= submit.name %></h4>
+        </div>
         <div class="description_ap">
           <li>【エリア：<%= submit.area %>】</li>
           <li>【金額：<%= submit.price %>】</li>
@@ -46,9 +48,9 @@
         <p><%= submit.overview %></p><br>
         <div class="description_mood">
           <li>こだわり条件（<%= submit.mood %>）</li>
-          <div class="show_page">
-            <%= link_to "詳細ページ⇨", submit_path(submit.id) %>
-          </div>
+        </div>
+        <div class="show_page">
+          <%= link_to "詳細ページ⇨", submit_path(submit.id) %>
         </div>
       </div>
     </div><br>
