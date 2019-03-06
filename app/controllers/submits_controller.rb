@@ -22,9 +22,9 @@ class SubmitsController < ApplicationController
   end
 
   def search_show
-    @submits = Submit.all
+    @submits = Submit.all.order("id DESC")
     if request.post?
-     @submits = Submit.search(params[:area_search],params[:purpose_search],params[:price_search]).order("id DESC")
+     @submits = Submit.search(params[:area_search],params[:purpose_search],params[:price_search])
      if !@submits
        @submits = Submit.all
      end

@@ -174,6 +174,8 @@
   .second-block h2 {
     text-align: center;
     color: #A4A4A4;
+    padding-top: 8px;
+    font-weight: 600;
   }
 
   .tops-area {
@@ -267,6 +269,10 @@
     }
     .img-fluid {
       width: 60% !important;
+    }
+
+    .tops-purpose {
+      margin-bottom: 0px;
     }
   }
   /*スマホ用-終わり*/
