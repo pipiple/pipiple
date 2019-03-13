@@ -9,11 +9,11 @@ Rails.application.routes.draw do
   passwords:     'users/passwords',
   registrations: 'users/registrations'
 }
-  get 'submits/index' => 'submits#index'
+  get 'submits/indexsecret' => 'submits#index'
   resources :submits
 
   get 'newplan' => 'submits#new'
-  post 'submits/new' => 'submits#create'
+  post 'newplan' => 'submits#create'
 
   get 'submits/search_show/' => 'submits#search_show'
   post 'submits/search_show/' => 'submits#search_show'
