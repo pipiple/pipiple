@@ -285,6 +285,11 @@
   }
   /*スマホ用-終わり*/
 }
+@media screen and (max-width: 480px){
+  .ad_pc {
+    display: none;
+  }
+}
 
 footer {
   display: flex;
