@@ -1,12 +1,7 @@
 class SubmitsController < ApplicationController
   def index
-    @submits = Submit.all.order("id DESC")
-    if request.post?
-     @submits = Submit.search(params[:area_search],params[:purpose_search],params[:mood_search],params[:price_search])
-     if !@submits
-       @submits = Submit.all
-     end
-   end
+    @submits = Submit.order("id DESC")
+    @submits = Submit.page(params[:page]).per(5)
   end
 
   def edit
@@ -24,11 +19,12 @@ class SubmitsController < ApplicationController
   def search_show
     @submits = Submit.all.order("id DESC")
     if request.post?
-     @submits = Submit.search(params[:area_search],params[:purpose_search],params[:price_search])
-     if !@submits
-       @submits = Submit.all
-     end
-   end
+      @submits = Submit.search(params[:area_search],params[:purpose_search],params[:price_search])
+      if !@submits
+        @submits = Submit.all
+      end
+    end
+    @submits = Submit.page(params[:page]).per(5)
   end
 
   def show
@@ -37,6 +33,7 @@ class SubmitsController < ApplicationController
 
   def area_search
     @submits = Submit.where(area: params[:search]).order("id DESC")
+    @submits = Submit.page(params[:page]).per(5)
     @title = params[:search]
 
     render "search_show"
@@ -45,6 +42,7 @@ class SubmitsController < ApplicationController
   def purpose_search
     @submits = Submit.joins(:purposes).where(purposes: {purpose: params[:search]}).order("id DESC")
     #Submitモデルのpurposeカラムの告白が含まれているものをwhereで探し出す
+    @submits = Submit.page(params[:page]).per(5)
     @title = params[:search]
 
     render "search_show"

@@ -23,7 +23,6 @@
       </div>
     </div>
 
-
     <% @submits.each do |submit| %>
     <div class="planplan">
       <div class="img-thumbnail bg-light">
@@ -54,6 +53,7 @@
       </div>
     </div><br>
     <% end %>
+    <%= paginate @submits %>
 
   </div>
 </div>

@@ -1,5 +1,5 @@
 <head>
-  <title>厳選された<%= @title %>のデートプラン【ぴぴぷる(PiPiple)】</title>
+  <title>デートプラン - <%= @title %>【ぴぴぷる(PiPiple)】</title>
   <meta name="description" content="様々な場面に応じたデートプランを紹介するWebサイト「ぴぴぷる」は、あなたに最適なデートを探せます。
   厳選された<%= @title %>のデートプランを一覧">
 </head>
@@ -44,14 +44,18 @@
     </div>
     <!-- GoogleAd01 -->
 
-    <!-- nend -->
-    <div class="advertisement">
-      <script type="text/javascript">
-      var nend_params = {"media":60260,"site":320022,"spot":946413,"type":1,"oriented":1};
-      </script>
-      <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
-    </div>
-    <!-- nend -->
+    <!-- GoogleAdPhone01 -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-5782150709003973"
+         data-ad-slot="1944241831"
+         data-ad-format="link"
+         data-full-width-responsive="true"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <!-- GoogleAdPhone01 -->
     <br>
 
     <% @submits.each do |submit| %>
@@ -84,6 +88,7 @@
       </div>
     </div><br>
     <% end %>
+    <%= paginate @submits %>
 
     <!-- GoogleAd01 -->
     <div class="advertisement ad_pc">

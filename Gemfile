@@ -72,3 +72,5 @@ gem 'fog-aws'
 gem "jquery-rails"
 gem 'ransack'
 gem 'cloudinary'
+
+gem 'kaminari'
