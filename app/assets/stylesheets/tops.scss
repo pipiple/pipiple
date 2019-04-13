@@ -135,6 +135,8 @@
   /*   second-block   */
   .second-block {
     display: flex;
+    text-align: center;
+    margin: 0;
   }
 
   .tops-main-container {
@@ -167,7 +169,7 @@
 
   .clearfix li {
     list-style: none;
-    width: 50%;
+    width: 300px;
     display: table-cell;
     vertical-align: middle;
 
@@ -263,7 +265,7 @@
       width: 100%;
     }
     .clearfix li {
-      width: 140px;
+      width: 130px;
     }
 
     .tops-area {
@@ -298,6 +300,11 @@
 }
 @media screen and (max-width: 480px){
   .ad_pc {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 481px){
+  .ad_phone {
     display: none !important;
   }
 }
