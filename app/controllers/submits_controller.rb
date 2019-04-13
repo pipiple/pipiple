@@ -17,14 +17,10 @@ class SubmitsController < ApplicationController
   end
 
   def search_show
-    @submits = Submit.all.order("id DESC")
-    if request.post?
-      @submits = Submit.search(params[:area_search],params[:purpose_search],params[:price_search])
-      if !@submits
-        @submits = Submit.all
-      end
+    @submits = Submit.search(params[:area_search],params[:purpose_search],params[:price_search]).order("id DESC").page(params[:page]).per(5)
+    if !@submits
+      @submits = Submit.all
     end
-    @submits = Submit.page(params[:page]).per(5)
   end
 
   def show
