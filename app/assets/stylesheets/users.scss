@@ -1,0 +1,50 @@
+.users {
+  font-family: serif;
+  p {
+    text-align: center;
+    padding-top: 10px;
+  }
+  h3 {
+    margin-top: 15px;
+    font-weight: 700;
+  }
+  .blank {
+    background-color: #DDDDDD;
+  }
+  .links {
+    display: block;
+    text-align: center;
+  }
+  .field i {
+    font-style: normal;
+  }
+  .actions {
+    text-align: center;
+  }
+  .check {
+    text-align: center;
+  }
+
+  // マイページ
+  h3 {
+    text-align: center;
+    font-weight: 700;
+    padding: 5px 10px;
+  }
+  .table th {
+    width: calc(100%/2);
+  }
+  .create_edit {
+    display: flex;
+    justify-content: center;
+  }
+  .create_edit p {
+    margin: 10px 10%;
+  }
+
+  // 登録情報変更
+  .form-control {
+    width: 98%;
+    margin: auto;
+  }
+}

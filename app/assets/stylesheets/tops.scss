@@ -7,21 +7,26 @@
 }
 .header-nav {
   width: 100%;
-  height: 35px;
+  height: 40px;
   background-color: #FFC0CB;
 
   display: flex;
   flex-direction: row;
-  font-style: oblique;
+  justify-content: flex-end;
   align-items: center;
+  font-style: oblique;
   font-family: serif;
 }
 .header-nav nav {
-  margin-left: 3%;
+  margin-right: 3%;
 }
 
 .advertisement {
   text-align: center;
+}
+
+.ad_side {
+  margin-left: 15px;
 }
 
 .tops.index{
@@ -97,7 +102,7 @@
   .cp_ipselect.cp_sl04 {
   	position: relative;
   	border-radius: 2px;
-  	border: 2px solid #da3c41;
+  	border: 2px solid #dc3545;
     border-radius: 50px;
   	background: #ffffff;
   }
@@ -111,23 +116,23 @@
   	content: '';
   	border-left: 6px solid transparent;
   	border-right: 6px solid transparent;
-  	border-top: 6px solid #da3c41;
+  	border-top: 6px solid #dc3545;
   	pointer-events: none;
   }
   .select {
   	padding: 5px 35px 5px 8px;
-  	color: #da3c41;
+  	color: #dc3545;
   }
   .search_button {
     display: block;
     width: 80px;
     color: #fff;
     text-align: center;
-    background-color: #da3c41;
+    background-color: #dc3545;
     cursor: pointer;
     border-radius: 50px;
     padding: 5px;
-    border: 2px solid #da3c41;
+    border: 2px solid #dc3545;
   }
   /* 検索　END */
 
@@ -227,6 +232,21 @@
   }
   /*   second-block End   */
 
+  .post-space {
+    margin-left: 15px;
+    text-align: center;
+  }
+  .post {
+    margin-top: 7px;
+    height: 71px;
+    font-size: 20px;
+    border-radius: 15px;
+    line-height: 56px;
+  }
+  .post-space p {
+    font-size: 11px;
+  }
+
   /*スマホ用*/
   @media screen and (max-width: 480px) {
     .head-block {
@@ -269,6 +289,18 @@
       width: 130px;
     }
 
+    .post-space {
+      margin: 0px 15px;
+    }
+    .post {
+      height: 45px;
+      line-height: 30px;
+      border-radius: 12px;
+    }
+    .post-space p {
+      font-size: 8px;
+    }
+
     .tops-area {
       padding: 5px;
     }
@@ -296,12 +328,24 @@
     .tops-purpose {
       margin-bottom: 0px;
     }
+
   }
   /*スマホ用-終わり*/
 }
 @media screen and (max-width: 480px){
   .ad_pc {
     display: none !important;
+  }
+
+  .header-nav {
+    display: table;
+    table-layout: fixed;
+    text-align: center;
+  }
+  .header-nav nav {
+    font-size: 14px;
+    display: table-cell;
+    vertical-align: middle;
   }
 }
 @media screen and (min-width: 481px){

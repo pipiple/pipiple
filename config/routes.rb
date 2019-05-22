@@ -9,11 +9,13 @@ Rails.application.routes.draw do
   passwords:     'users/passwords',
   registrations: 'users/registrations'
 }
-  get 'submits/indexsecret' => 'submits#index'
+  resources :users, only: [:show, :edit]
+
+  get 'submits/index' => 'submits#index'
   resources :submits
 
-  get 'newplan' => 'submits#new'
-  post 'newplan' => 'submits#create'
+  get 'submits/new' => 'submits#new'
+  post 'submits/new' => 'submits#create'
 
   get 'submits/search_show/' => 'submits#search_show'
   post 'submits/search_show/' => 'submits#search_show'
@@ -21,7 +23,10 @@ Rails.application.routes.draw do
   get 'submits/purpose/:search' => 'submits#purpose_search'
   get 'submits/mood/:search' => 'submits#mood_search'
 
+  delete 'submits/:id' => 'submits#destroy'
+
   get 'tops/index' => 'tops#index'
   root 'tops#index'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

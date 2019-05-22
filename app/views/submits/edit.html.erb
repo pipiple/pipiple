@@ -1,142 +1,151 @@
-<div class = "submits_index">
+<head>
+  <title>デートを編集 - ぴぴぷる(PiPiple)</title>
+</head>
 
-  <h1 class="sample">新規登録<h1>
+<div class="submits_plans container">
+  <div class="row">
+    <div class="col-12 frame">
+      <div class="title">
+        <h3>デートを編集する</h3>
+      </div>
 
-  <%= form_for(@submits, url:{controller:'submits', action:'update'})do |f| %>
+      <%= form_for(@submits, url:{controller:'submits', action:'update'})do |f| %>
 
-  <div class="field">
-    <%= f.label :プラン名%>
-    <br>
-    <%= f.text_field :name, size: 50 %>
-  </div><br><br>
+      <div class="field">
+        <%= f.label :プラン名%>
+        <br>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div><br>
 
-  <div class="field">
-    <%= f.label :エリアの名前 %>
-    <br>
-    <%= f.select :area, ['丸の内エリア（銀座・東京・日本橋）', '下町エリア（浅草・上野・押上）', '六本木エリア（六本木・品川・麻布）',
-     '新宿エリア（新宿・代々木）', '池袋エリア（池袋・赤羽・埼玉）', '渋谷エリア（渋谷・代官山・目黒）', '23区外エリア（吉祥寺・立川）',
-     'お台場エリア（豊洲・有明・舞浜）', '横浜エリア（みなとみらい・元町中華街）'] %>
-  </div><br><br>
+      <div class="field">
+        <%= f.label :エリアの名前 %>
+        <br>
+        <%= f.select :area, ['丸の内エリア（銀座・東京・日本橋）', '下町エリア（浅草・上野・押上）', '六本木エリア（六本木・品川・麻布）',
+        '新宿エリア（新宿・代々木）', '池袋エリア（池袋・赤羽・埼玉）', '渋谷エリア（渋谷・代官山・目黒）', '表参道エリア（原宿・青山）',
+        '23区外エリア（吉祥寺・立川）', 'お台場エリア（豊洲・有明・舞浜）', '横浜エリア（みなとみらい・元町中華街）'],
+        :prompt => '選択してください' %>
+      </div><br>
 
-  <% @submits.purposes.each do |purpose| %>
-   <%= purpose.purpose %>
+      <% @submits.purposes.each do |purpose| %>
+        <%= purpose.purpose %>
 
-  <% end %>
+      <% end %>
 
-  <div class="field">
-    <%= f.label :雰囲気 %>
-    <br>
-    <%= f.text_field :mood, size: 100 %>
-  </div><br><br>
+      <div class="field">
+        <%= f.label :雰囲気（タグ付け） %>
+        <br>
+        <%= f.text_field :mood, class: 'form-control' %>
+          <small class="form-text text-muted">※ハッシュタグ(#)をつけてください。 ex.#インスタ映え#夜景が綺麗</small>
+      </div><br>
 
-  <div class="field">
-    <%= f.label :一人の金額 %>
-    <br>
-    <%= f.select :price, ['5000円以内', '5000円~10000円', '10000円~15000円', '15000円~20000円', '20000円以上'] %>
-  </div><br><br>
+      <div class="field">
+        <%= f.label :一人の金額 %>
+        <br>
+        <%= f.select :price, ['5000円以内', '5000円~10000円', '10000円~15000円', '15000円~20000円', '20000円以上'], :prompt => '選択してください' %>
+      </div><br>
 
-  <div class="field">
-    <%= f.label :概要（〇〇_searchアクションの説明とshowアクション上） %>
-    <br>
-    <%= f.text_area :overview, :size => "100x3" %>
-  </div><br><br>
+      <div class="field">
+        <%= f.label :概要（〇〇_searchアクションの説明とshowアクション上） %>
+        <br>
+        <%= f.text_area :overview, :size => "100x2", class: 'form-control' %>
+      </div><br>
 
-  <div class="field">
-    <%= f.label :ランチの店名 %>
-    <br>
-    <%= f.text_field :lunch, size: 50 %>
-  </div><br><br>
+      <div class="field">
+        <%= f.label :ランチの店名 %>
+        <br>
+        <%= f.text_field :lunch, class: 'form-control' %>
+      </div><br>
 
-  <div class="field">
-    <%= f.label :ランチの内容 %>
-    <br>
-    <%= f.text_area :lunch_body, :size => "100x3" %>
-  </div><br><br>
+      <div class="field">
+        <%= f.label :ランチの内容 %>
+        <br>
+        <%= f.text_area :lunch_body, :size => "100x2", class: 'form-control' %>
+      </div><br>
 
-  <div class="field">
-    <%= f.label :ランチの画像 %>
-    <%= f.file_field :lunch_image %>
-  </div><br><br>
+      <div class="field">
+        <%= f.label :ランチの画像 %>
+        <%= f.file_field :lunch_image %>
+      </div><br>
 
-  <div class="field">
-    <%= f.label :ランチの店のURL %>
-    <br>
-    <%= f.text_field :lunch_URL, size: 50 %>
-  </div><br><br>
+      <div class="field">
+        <%= f.label :ランチの店のURL %>
+        <br>
+        <%= f.text_field :lunch_URL, class: 'form-control' %>
+      </div><br>
 
-  <div class="field">
-    <%= f.label :午後のデート場所 %>
-    <br>
-    <%= f.text_field :afternoon, size: 50 %>
-  </div><br><br>
+      <div class="field">
+        <%= f.label :午後のデート場所 %>
+        <br>
+        <%= f.text_field :afternoon, class: 'form-control' %>
+      </div><br>
 
-  <div class="field">
-    <%= f.label :午後のデート内容 %>
-    <br>
-    <%= f.text_area :afternoon_body, :size => "100x3" %>
-  </div><br><br>
+      <div class="field">
+        <%= f.label :午後のデート内容 %>
+        <br>
+        <%= f.text_area :afternoon_body, :size => "100x2", class: 'form-control' %>
+      </div><br>
 
-  <div class="field">
-    <%= f.label :午後のデート画像 %>
-    <%= f.file_field :afternoon_image %>
-  </div><br><br>
+      <div class="field">
+        <%= f.label :午後のデート画像 %>
+        <%= f.file_field :afternoon_image %>
+      </div><br>
 
-  <div class="field">
-    <%= f.label :午後のURL %>
-    <br>
-    <%= f.text_field :afternoon_URL, size: 50 %>
-  </div><br><br>
+      <div class="field">
+        <%= f.label :午後のURL %>
+        <br>
+        <%= f.text_field :afternoon_URL, class: 'form-control' %>
+      </div><br>
 
-  <div class="field">
-    <%= f.label :夕方のデート場所（空欄も可） %>
-    <br>
-    <%= f.text_field :evening, size: 50 %>
-  </div><br><br>
+      <div class="field">
+        <%= f.label :夕方のデート場所（空欄も可） %>
+        <br>
+        <%= f.text_field :evening, class: 'form-control' %>
+      </div><br>
 
-  <div class="field">
-    <%= f.label :夕方のデート内容（空欄も可） %>
-    <br>
-    <%= f.text_area :evening_body, :size => "100x3" %>
-  </div><br><br>
+      <div class="field">
+        <%= f.label :夕方のデート内容（空欄も可） %>
+        <br>
+        <%= f.text_area :evening_body, :size => "100x2", class: 'form-control' %>
+      </div><br>
 
-  <div class="field">
-    <%= f.label :夕方のデート画像（空欄も可） %>
-    <%= f.file_field :evening_image %>
-  </div><br><br>
+      <div class="field">
+        <%= f.label :夕方のデート画像（空欄も可） %>
+        <%= f.file_field :evening_image %>
+      </div><br>
 
-  <div class="field">
-    <%= f.label :夕方のURL %>
-    <br>
-    <%= f.text_field :evening_URL, size: 50 %>
-  </div><br><br>
+      <div class="field">
+        <%= f.label :夕方のURL %>
+        <br>
+        <%= f.text_field :evening_URL, class: 'form-control' %>
+      </div><br>
 
-  <div class="field">
-    <%= f.label :ディナーの店名 %>
-    <br>
-    <%= f.text_field :dinner, size: 50 %>
-  </div><br><br>
+      <div class="field">
+        <%= f.label :ディナーの店名 %>
+        <br>
+        <%= f.text_field :dinner, class: 'form-control' %>
+      </div><br>
 
-  <div class="field">
-    <%= f.label :ディナーの内容 %>
-    <br>
-    <%= f.text_area :dinner_body, :size => "100x3" %>
-  </div><br><br>
+      <div class="field">
+        <%= f.label :ディナーの内容 %>
+        <br>
+        <%= f.text_area :dinner_body, :size => "100x2", class: 'form-control' %>
+      </div><br>
 
-  <div class="field">
-    <%= f.label :ディナーの画像 %>
-    <%= f.file_field :dinner_image %>
-  </div><br><br>
+      <div class="field">
+        <%= f.label :ディナーの画像 %>
+        <%= f.file_field :dinner_image %>
+      </div><br>
 
-  <div class="field">
-    <%= f.label :ディナーの店のURL %>
-    <br>
-    <%= f.text_field :dinner_URL, size: 50 %>
-  </div><br><br>
+      <div class="field">
+        <%= f.label :ディナーの店のURL %>
+        <br>
+        <%= f.text_field :dinner_URL, class: 'form-control' %>
+      </div><br>
 
-
-   <div class="action">
-     <%= f.submit :class=>"hoge" %>
-   </div>
-  <% end %>
-
+       <div class="action">
+         <%= f.submit "更新する", class: 'btn btn-warning' %>
+       </div><br>
+      <% end %>
+    </div>
+  </div>
 </div>

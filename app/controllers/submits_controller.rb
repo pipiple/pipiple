@@ -1,4 +1,6 @@
 class SubmitsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :index]
+
   def index
     @submits = Submit.order("id DESC").page(params[:page]).per(10)
   end
@@ -50,14 +52,12 @@ class SubmitsController < ApplicationController
 
   def create
     @submit = Submit.new(submit_params)
-    @submit.user_id = 1
+    @submit.user_id = current_user.id
     @submit.purposes = Purpose.where(id: params[:submit][:purposes])
-    #新しいTweetの保存に成功した場合
+    #新しい投稿の保存に成功した場合
     if @submit.save
-
-      #index.html.erbにページが移る
-        redirect_to action: "new"
-    #新しいTweetの保存に失敗した場合
+        redirect_to submit_path(@submit)
+    #新しい投稿の保存に失敗した場合
     else
       #もう一回投稿画面へ
       redirect_to action: "new"
@@ -67,7 +67,15 @@ class SubmitsController < ApplicationController
   def update
     @submit = Submit.find(params[:id])
     @submit.update(submit_params)
-    redirect_to action: "index"
+    redirect_to submit_path(@submit)
+  end
+
+  def destroy
+    @submit = Submit.find(params[:id])
+    if @submit.user_id == current_user.id
+      @submit.destroy
+      redirect_to controller: :tops, action: :index
+    end
   end
 
   private

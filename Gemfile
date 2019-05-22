@@ -69,8 +69,8 @@ gem 'pry-rails'
 gem 'carrierwave'
 gem 'fog-aws'
 
-gem "jquery-rails"
 gem 'ransack'
 gem 'cloudinary'
 
 gem 'kaminari'
+gem 'impressionist'

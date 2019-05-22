@@ -29,7 +29,14 @@
     <div class="container-fluid">
       <div class="row">
         <header class="header-nav">
-          <nav class="header-nav-home"><a href="/">PiPiple(β版)</a></nav>
+          <nav><a href="/">PiPiple(β版)</a></nav>
+          <% if user_signed_in? %>
+            <nav><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></nav>
+            <nav><a href="/users/<%= current_user.id %>">マイページ</a></nav>
+            <% else %>
+            <nav><%= link_to "ログイン", { :controller => "users/sessions", :action => "new"}, :method => :get %></nav>
+            <nav><%= link_to "新規登録", { :controller => "users/registrations", :action => "new"}, :method => :get %></nav>
+          <% end %>
         </header>
       </div>
     </div>

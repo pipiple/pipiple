@@ -1,29 +1,61 @@
-<h2>Sign up</h2>
+<head>
+  <title>ユーザー登録 - PiPiple</title>
+</head>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<div class="users container">
+  <div class="row">
+    <div class="input-space col-12 form-control">
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <% elsif alert %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <h3>新規登録</h3>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="field">
+          <%= f.label :ユーザー名（10文字以内） %><br />
+          <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+        </div><br>
+
+        <div class="field">
+          <%= f.label :年齢 %><br />
+          <%= f.select :age, ['19歳以下', '20歳〜24歳', '25歳〜29歳', '30歳〜34歳', '35歳〜39歳', '40歳以上'] %>
+        </div><br>
+
+        <div class="field">
+          <%= f.label :性別 %><br />
+          <%= f.select :sex, ['男性', '女性'] %>
+        </div><br>
+
+        <div class="field">
+          <%= f.label :メールアドレス %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+        </div><br>
+
+        <div class="field">
+          <%= f.label :パスワード %>
+          <% if @minimum_password_length %>
+          <i>(<%= @minimum_password_length %>文字以上)</i>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
+        </div><br>
+
+        <div class="field">
+          <%= f.label :確認の為、パスワードを再度入力して下さい %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
+        </div><br>
+
+        <div class="actions">
+          <%= f.submit "登録", class: 'btn btn-warning' %>
+        </div><br>
+      <% end %>
+      <div class="links col-12">
+        <%= render "users/shared/links" %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>

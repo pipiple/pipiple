@@ -59,59 +59,92 @@
     </div>
     <!-- GoogleAdPhone01 -->
     <br>
-
-    <% @submits.each do |submit| %>
-    <div class="planplan">
-      <div class="img-thumbnail bg-light">
-        <div class="loopslider">
-          <ul>
-            <li><%= image_tag submit.lunch_image.to_s, :height => 130 %></li>
-            <li><%= image_tag submit.afternoon_image.to_s, :height => 130 %></li>
-            <li><%= image_tag submit.evening_image.to_s, :height => 130 %></li>
-            <li><%= image_tag submit.dinner_image.to_s, :height => 130 %></li>
-          </ul>
-        </div>
-      </div>
-      <div class="description">
-        <div class="description_n">
-          <h4><%= submit.name %></h4>
-        </div>
-        <div class="description_ap">
-          <li>【エリア：<%= submit.area %>】</li>
-          <li>【金額：<%= submit.price %>】</li>
+    <div class="row">
+      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+        <% @submits.each do |submit| %>
+        <div class="planplan">
+          <div class="img-thumbnail bg-light">
+            <div class="loopslider">
+              <ul>
+                <li><%= image_tag submit.lunch_image.to_s, :height => 130 %></li>
+                <li><%= image_tag submit.afternoon_image.to_s, :height => 130 %></li>
+                <li><%= image_tag submit.evening_image.to_s, :height => 130 %></li>
+                <li><%= image_tag submit.dinner_image.to_s, :height => 130 %></li>
+              </ul>
+            </div>
+          </div>
+          <div class="description">
+            <div class="description_n">
+              <h4><%= submit.name %></h4>
+            </div>
+            <div class="description_ap">
+              <li>【エリア：<%= submit.area %>】</li>
+              <li>【金額：<%= submit.price %>】</li>
+            </div><br>
+            <p><%= submit.overview %></p><br>
+            <div class="description_mood">
+              <li>こだわり条件（<%= submit.mood %>）</li>
+            </div>
+            <div class="show_page">
+              <%= link_to "詳細ページ⇨", submit_path(submit.id) %>
+            </div>
+          </div>
         </div><br>
-        <p><%= submit.overview %></p><br>
-        <div class="description_mood">
-          <li>こだわり条件（<%= submit.mood %>）</li>
-        </div>
-        <div class="show_page">
-          <%= link_to "詳細ページ⇨", submit_path(submit.id) %>
-        </div>
-      </div>
-    </div><br>
-    <% end %>
-    <%= paginate @submits %>
+        <% end %>
+        <%= paginate @submits %>
 
-    <div class="advertisement">
-      <!-- GoogleAd01 -->
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-5782150709003973"
-           data-ad-slot="4541501501"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-      <!-- GoogleAd01 -->
-      <!-- nend -->
-      <script type="text/javascript">
-      var nend_params = {"media":60260,"site":320022,"spot":946837,"type":2,"oriented":1};
-      </script>
-      <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+        <div class="advertisement">
+          <!-- GoogleAd01 -->
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-5782150709003973"
+               data-ad-slot="4541501501"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+          <!-- GoogleAd01 -->
+          <!-- nend -->
+          <script type="text/javascript">
+          var nend_params = {"media":60260,"site":320022,"spot":946837,"type":2,"oriented":1};
+          </script>
+          <script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+        </div>
+        <!-- nend -->
+      </div>
+
+      <div class="col-lg-2 col-md-2 d-sm-2 hidden-xs">
+        <!-- GoogleAd02 -->
+        <div class="ad_pc ad_side">
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-5782150709003973"
+               data-ad-slot="5420452417"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+          <br><br>
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-5782150709003973"
+               data-ad-slot="5420452417"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
+        <!-- GoogleAd02 -->
+      </div>
     </div>
-    <!-- nend -->
+
+
   </div>
 </div>
 
