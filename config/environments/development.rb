@@ -39,7 +39,7 @@ Rails.application.configure do
       :port => 587,
       :domain => 'smtp.gmail.com',
       :user_name => 'pipiple.official@gmail.com',
-      :password => "datepipi03",
+      :password => "※",
       :authentication => 'login',
   }
 
