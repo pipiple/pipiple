@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PlanPurposeTest < ActiveSupport::TestCase
+class DateSpotTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

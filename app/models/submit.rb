@@ -1,8 +1,11 @@
 class Submit < ApplicationRecord
   validate :add_error_plans
 
-  #アソシエーション(1:多)
+  #userとのアソシエーション(多:1)
   belongs_to :user
+
+  #date_spotとのアソシエーション(1:多)
+  has_many :date_spots
 
   has_many :submit_purposes, dependent: :destroy
   has_many :purposes, :through => :submit_purposes

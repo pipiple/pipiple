@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_03_093509) do
+ActiveRecord::Schema.define(version: 2019_05_29_123413) do
+
+  create_table "categories", force: :cascade do |t|
+    t.integer "submit_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "date_spots", force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "submit_id"
+    t.string "name"
+    t.text "description"
+    t.string "url"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "impressions", force: :cascade do |t|
     t.string "impressionable_type"
@@ -50,24 +68,6 @@ ActiveRecord::Schema.define(version: 2019_05_03_093509) do
     t.index ["reset_password_token"], name: "index_owners_on_reset_password_token", unique: true
   end
 
-  create_table "plan_purposes", force: :cascade do |t|
-    t.integer "plan_id"
-    t.integer "purpose_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["plan_id"], name: "index_plan_purposes_on_plan_id"
-    t.index ["purpose_id"], name: "index_plan_purposes_on_purpose_id"
-  end
-
-  create_table "plans", force: :cascade do |t|
-    t.integer "combination1"
-    t.integer "combination2"
-    t.integer "combination3"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "privates", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -94,22 +94,6 @@ ActiveRecord::Schema.define(version: 2019_05_03_093509) do
     t.string "mood"
     t.string "price"
     t.text "overview"
-    t.string "lunch"
-    t.text "lunch_body"
-    t.string "lunch_image"
-    t.string "lunch_URL"
-    t.string "afternoon"
-    t.text "afternoon_body"
-    t.string "afternoon_image"
-    t.string "afternoon_URL"
-    t.string "evening"
-    t.text "evening_body"
-    t.string "evening_image"
-    t.string "evening_URL"
-    t.string "dinner"
-    t.text "dinner_body"
-    t.string "dinner_image"
-    t.string "dinner_URL"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
