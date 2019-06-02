@@ -6,6 +6,7 @@ class Submit < ApplicationRecord
 
   #date_spotとのアソシエーション(1:多)
   has_many :date_spots
+  accepts_nested_attributes_for :date_spots
 
   has_many :submit_purposes, dependent: :destroy
   has_many :purposes, :through => :submit_purposes

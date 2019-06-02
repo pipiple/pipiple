@@ -27,9 +27,9 @@
       </div><br>
 
       <div class="field">
+      <%= f.label :目的（複数選択可） %><br>
       <% @purposes.each do |purpose| %>
         <%= purpose.purpose %>
-        <%= f.label :目的（複数選択可） %>
         <%= f.check_box :purposes, { multiple: true }, purpose.id, false%>
       <% end %>
       </div><br>
@@ -53,97 +53,31 @@
         <%= f.text_area :overview, :size => "100x2", class: 'form-control' %>
       </div><br>
 
-      <div class="field">
-        <%= f.label :ランチの店名 %>
-        <br>
-        <%= f.text_field :lunch, class: 'form-control' %>
-      </div><br>
+      <% f.fields_for :date_spots do |i| %>
 
-      <div class="field">
-        <%= f.label :ランチの内容 %>
-        <br>
-        <%= f.text_area :lunch_body, :size => "100x2", class: 'form-control' %>
-      </div><br>
+        <div class="field">
+          <%= i.label :ランチの店名 %>
+          <br>
+          <%= i.text_field :name, class: 'form-control' %>
+        </div><br>
 
-      <div class="field">
-        <%= f.label :ランチの画像 %>
-        <%= f.file_field :lunch_image %>
-      </div><br>
+        <div class="field">
+          <%= i.label :内容 %>
+          <br>
+          <%= i.text_area :description, :size => "100x2", class: 'form-control' %>
+        </div><br>
 
-      <div class="field">
-        <%= f.label :ランチの店のURL %>
-        <br>
-        <%= f.text_field :lunch_URL, class: 'form-control' %>
-      </div><br>
+        <div class="field">
+          <%= i.label :画像 %>
+          <%= i.file_field :image %>
+        </div><br>
 
-      <div class="field">
-        <%= f.label :午後のデート場所 %>
-        <br>
-        <%= f.text_field :afternoon, class: 'form-control' %>
-      </div><br>
-
-      <div class="field">
-        <%= f.label :午後のデート内容 %>
-        <br>
-        <%= f.text_area :afternoon_body, :size => "100x2", class: 'form-control' %>
-      </div><br>
-
-      <div class="field">
-        <%= f.label :午後のデート画像 %>
-        <%= f.file_field :afternoon_image %>
-      </div><br>
-
-      <div class="field">
-        <%= f.label :午後のURL %>
-        <br>
-        <%= f.text_field :afternoon_URL, class: 'form-control' %>
-      </div><br>
-
-      <div class="field">
-        <%= f.label :夕方のデート場所（空欄も可） %>
-        <br>
-        <%= f.text_field :evening, class: 'form-control' %>
-      </div><br>
-
-      <div class="field">
-        <%= f.label :夕方のデート内容（空欄も可） %>
-        <br>
-        <%= f.text_area :evening_body, :size => "100x2", class: 'form-control' %>
-      </div><br>
-
-      <div class="field">
-        <%= f.label :夕方のデート画像（空欄も可） %>
-        <%= f.file_field :evening_image %>
-      </div><br>
-
-      <div class="field">
-        <%= f.label :夕方のURL %>
-        <br>
-        <%= f.text_field :evening_URL, class: 'form-control' %>
-      </div><br>
-
-      <div class="field">
-        <%= f.label :ディナーの店名 %>
-        <br>
-        <%= f.text_field :dinner, class: 'form-control' %>
-      </div><br>
-
-      <div class="field">
-        <%= f.label :ディナーの内容 %>
-        <br>
-        <%= f.text_area :dinner_body, :size => "100x2", class: 'form-control' %>
-      </div><br>
-
-      <div class="field">
-        <%= f.label :ディナーの画像 %>
-        <%= f.file_field :dinner_image %>
-      </div><br>
-
-      <div class="field">
-        <%= f.label :ディナーの店のURL %>
-        <br>
-        <%= f.text_field :dinner_URL, class: 'form-control' %>
-      </div><br>
+        <div class="field">
+          <%= i.label :ランチの店のURL %>
+          <br>
+          <%= i.text_field :url, class: 'form-control' %>
+        </div><br>
+      <% end %>
 
       <div class="action">
         <%= f.submit "投稿する", class: 'btn btn-warning' %>
