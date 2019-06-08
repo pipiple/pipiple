@@ -15,7 +15,7 @@ class SubmitsController < ApplicationController
   def new
     @submits = Submit.new
     @purposes = Purpose.all
-    @submits.date_spots.build
+    @submits.date_spots.first.category.build
   end
 
   def search_show
@@ -82,7 +82,7 @@ class SubmitsController < ApplicationController
   private
   def submit_params
     params.require(:submit).permit(:name, :area, :mood, :price, :overview, date_spots_attributes: [:name,
-      :description, :image, :url])
+      :description, :image, :url, category_attributes: %(name)])
   end
 
   def purpose_params
