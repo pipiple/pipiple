@@ -82,7 +82,7 @@ class SubmitsController < ApplicationController
   private
   def submit_params
     params.require(:submit).permit(:name, :area, :mood, :price, :overview, date_spots_attributes: [:name,
-      :description, :image, :url])
+      :description, :image, :url, :category_id])
   end
 
   def purpose_params
