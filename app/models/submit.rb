@@ -5,15 +5,11 @@ class Submit < ApplicationRecord
   belongs_to :user
 
   #date_spotとのアソシエーション(1:多)
-  has_many :date_spots
+  has_many :date_spots, dependent: :destroy
   accepts_nested_attributes_for :date_spots
 
   has_many :submit_purposes, dependent: :destroy
   has_many :purposes, :through => :submit_purposes
-  mount_uploader :lunch_image, AvatarUploader
-  mount_uploader :afternoon_image, AvatarUploader
-  mount_uploader :evening_image, AvatarUploader
-  mount_uploader :dinner_image, AvatarUploader
 
   validates :area, presence: true
   validates :price, presence: true

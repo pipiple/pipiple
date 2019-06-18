@@ -63,16 +63,15 @@
       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
         <% @submits.each do |submit| %>
         <div class="planplan">
+          <% submit.date_spots.each do |ss| %>
           <div class="img-thumbnail bg-light">
             <div class="loopslider">
               <ul>
-                <li><%= image_tag submit.lunch_image.to_s, :height => 130 %></li>
-                <li><%= image_tag submit.afternoon_image.to_s, :height => 130 %></li>
-                <li><%= image_tag submit.evening_image.to_s, :height => 130 %></li>
-                <li><%= image_tag submit.dinner_image.to_s, :height => 130 %></li>
+                <li><%= image_tag ss.image.to_s, :height => 130 %></li>
               </ul>
             </div>
           </div>
+          <% end %>
           <div class="description">
             <div class="description_n">
               <h4><%= submit.name %></h4>

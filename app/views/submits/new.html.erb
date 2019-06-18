@@ -30,7 +30,7 @@
       <%= f.label :目的（複数選択可） %><br>
       <% @purposes.each do |purpose| %>
         <%= purpose.purpose %>
-        <%= f.check_box :purposes, { multiple: true }, purpose.id, false%>
+        <%= f.check_box :purposes, {multiple: true}, purpose.id, false %>
       <% end %>
       </div><br>
 
@@ -55,37 +55,12 @@
 
         <%= f.fields_for :date_spots do |i| %>
 
-          <div class="field">
-            <%= i.label :店名（場所名） %>
-            <br>
-            <%= i.text_field :name, class: 'form-control' %>
-          </div><br>
+          <%= render "date_spot_fields", f: i %>
 
-          <div class="field">
-            <%= i.label :内容 %>
-            <br>
-            <%= i.text_area :description, :size => "100x2", class: 'form-control' %>
-          </div><br>
-
-          <div class="field">
-            <%= i.label :画像 %>
-            <%= i.file_field :image %>
-          </div><br>
-
-          <div class="field">
-            <%= i.label :URL %>
-            <br>
-            <%= i.text_field :url, class: 'form-control' %>
-          </div><br>
-
-          <div class="field">
-            <%= i.label :カテゴリー %>
-            <br>
-            <%= i.text_field :name, class: 'form-control' %>
-          </div><br>
         <% end %>
-
-
+        <div class="links">
+          <%= link_to_add_association "デートスポットを追加", f, :date_spots %>
+        </div>
       <div class="action">
         <%= f.submit "投稿する", class: 'btn btn-warning' %>
       </div><br>
@@ -93,3 +68,27 @@
     </div>
   </div>
 </div>
+
+<script language="javascript" type="text/javascript">
+  $(function() {
+    // limits the number of categories
+    $('#date_spots').on('cocoon:after-insert', function() {
+      check_to_hide_or_show_add_link();
+    });
+
+    $('#date_spots').on('cocoon:after-remove', function() {
+      check_to_hide_or_show_add_link();
+    });
+
+    check_to_hide_or_show_add_link();
+
+    function check_to_hide_or_show_add_link() {
+      if ($('#date_spots .nested-fields').length == 5) {
+        $('#add-date_spot a').hide();
+      } else {
+        $('#add-date_spot a').show();
+      }
+    }
+  })
+
+</script>

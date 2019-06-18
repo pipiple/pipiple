@@ -3,10 +3,6 @@
 class DeviseCreateUsers < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
-      t.string :name, null: false #マイページ用追記
-      t.string :sex, null: false #マイページ用追記
-      t.string :age, null: false #マイページ用追記
-      t.text :profile #マイページ用追記
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""

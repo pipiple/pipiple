@@ -3,7 +3,7 @@ class DateSpot < ApplicationRecord
   belongs_to :submit,optional: true
 
   #categoryとのアソシエーション(1:1)
-  has_one :category
+  belongs_to :category, dependent: :destroy
   accepts_nested_attributes_for :category
 
   mount_uploader :image, AvatarUploader
