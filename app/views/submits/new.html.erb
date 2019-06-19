@@ -53,14 +53,14 @@
         <%= f.text_area :overview, :size => "100x2", class: 'form-control' %>
       </div><br>
 
-        <%= f.fields_for :date_spots do |i| %>
-
+      <div id="date_spots">
+        <%= f.fields_for :date_spots  do |i| %>
           <%= render "date_spot_fields", f: i %>
-
         <% end %>
-        <div class="links">
+        <div id="add-date_spot" class="links">
           <%= link_to_add_association "デートスポットを追加", f, :date_spots %>
         </div>
+      </div>
       <div class="action">
         <%= f.submit "投稿する", class: 'btn btn-warning' %>
       </div><br>
@@ -70,13 +70,13 @@
 </div>
 
 <script language="javascript" type="text/javascript">
-  $(function() {
+  $(document).ready(function() {
     // limits the number of categories
-    $('#date_spots').on('cocoon:after-insert', function() {
+    $(document).on('cocoon:after-insert', function() {
       check_to_hide_or_show_add_link();
     });
 
-    $('#date_spots').on('cocoon:after-remove', function() {
+    $(document).on('cocoon:after-remove', function() {
       check_to_hide_or_show_add_link();
     });
 
