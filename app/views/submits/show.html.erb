@@ -16,7 +16,12 @@
       <div class="user-name">
         <b>投稿者：<%= @submit.user.name %><b>
       </div>
-      
+      <% @submit.date_spots.each do |i| %>
+      <div class="www">
+        <b><%= i.name %></b>
+      </div>
+      <% end %>
+
 
       <div class="delete_edit contents">
         <% if user_signed_in? && current_user.id == @submit.user_id %>

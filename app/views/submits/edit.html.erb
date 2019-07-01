@@ -51,36 +51,7 @@
       </div><br>
 
       <%= f.fields_for :date_spots do |i| %>
-
-        <div class="field">
-          <%= i.label :カテゴリー %>
-          <br>
-          <%= i.select :category_id, Category.all.pluck(:id, :name) => ['ランチ', 'デートスポット①', 'デートスポット②', 'ディナー', 'ホテル'] %>
-        </div><br>
-
-        <div class="field">
-          <%= i.label :店名（場所名） %>
-          <br>
-          <%= i.text_field :name, class: 'form-control' %>
-        </div><br>
-
-        <div class="field">
-          <%= i.label :内容 %>
-          <br>
-          <%= i.text_area :description, :size => "100x2", class: 'form-control' %>
-        </div><br>
-
-        <div class="field">
-          <%= i.label :画像 %>
-          <%= i.file_field :image %>
-        </div><br>
-
-        <div class="field">
-          <%= i.label :URL %>
-          <br>
-          <%= i.text_field :url, class: 'form-control' %>
-        </div><br>
-
+        <%= render "date_spot_fields", f: i %>
       <% end %>
 
        <div class="action">

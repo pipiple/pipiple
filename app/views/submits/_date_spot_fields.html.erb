@@ -1,8 +1,9 @@
 <div class="nested-fields">
+
   <div class="field">
     <%= f.label :カテゴリー %>
     <br>
-    <%= f.select :category_id, Category.all.pluck(:id, :name) => ['ランチ', 'デートスポット①', 'デートスポット②', 'ディナー', 'ホテル'] %>
+    <%= f.select :category, ['ランチ', 'デートスポット①', 'デートスポット②', 'ディナー', 'ホテル'] %>
   </div><br>
 
   <div class="field">

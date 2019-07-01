@@ -61,9 +61,9 @@ class SubmitsController < ApplicationController
     if @submit.save
         redirect_to submit_path(@submit)
     #新しい投稿の保存に失敗した場合
-    else
-      #もう一回投稿画面へ
-      redirect_to action: "new"
+      else
+        #もう一回投稿画面へ
+        redirect_to action: "new"
     end
   end
 
@@ -83,8 +83,8 @@ class SubmitsController < ApplicationController
 
   private
   def submit_params
-    params.require(:submit).permit(:name, :area, :mood, :price, :overview, date_spots_attributes: [:name,
-      :description, :image, :url, :category_id])
+    params.require(:submit).permit(:name, :area, :mood, :price, :overview, date_spots_attributes: [:id, :name,
+      :description, :image, :category, :url, :_destroy])
   end
 
   def purpose_params

@@ -63,15 +63,21 @@
       <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
         <% @submits.each do |submit| %>
         <div class="planplan">
-          <% submit.date_spots.each do |ss| %>
+
           <div class="img-thumbnail bg-light">
-            <div class="loopslider">
-              <ul>
-                <li><%= image_tag ss.image.to_s, :height => 130 %></li>
-              </ul>
+            <% submit.date_spots.each do |ss| %>
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <%= image_tag ss.image.to_s, :height => 130 %>
+                </div>
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
             </div>
+            <% end %>
           </div>
-          <% end %>
+
           <div class="description">
             <div class="description_n">
               <h4><%= submit.name %></h4>
@@ -143,49 +149,15 @@
       </div>
     </div>
 
-
   </div>
 </div>
 
-<script language="javascript" type="text/javascript">
-  $(window).on('load', function (){
-    $('.loopslider').each(function(){
-        var loopsliderWidth = $(this).width();
-        var loopsliderHeight = $(this).height();
-        $(this).children('ul').wrapAll('<div class="loopslider_wrap"></div>');
-
-        var loopWidth = 0;
-        $(this).find('ul li').each(function(){
-          loopWidth += $(this).width() + 2;
-        })
-        loopWidth += 1;
-
-        $('.loopslider_wrap').css({
-            top: '0',
-            left: '0',
-            width: ((loopWidth) * 2),
-            height: (loopsliderHeight),
-            overflow: 'hidden',
-            position: 'absolute'
-        });
-
-        var $_ = $(this).find('.loopslider_wrap');
-
-        $(this).find('.loopslider_wrap').css({
-            width: (loopWidth)
-        });
-        loopsliderPosition();
-
-        function loopsliderPosition(){
-            $_.css({left:'0'});
-            $_.stop().animate({left:'-' + (loopWidth) + 'px'},30000,'linear');
-            setTimeout(function(){
-                loopsliderPosition();
-            },30000);
-        };
-
-        $(this).find('ul').clone().appendTo($_);
-
-    });
-});
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    loop: true,
+  });
 </script>
