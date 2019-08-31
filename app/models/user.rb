@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   #アソシエーション(1:多)
   has_many :submits
+  accepts_nested_attributes_for :submits
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

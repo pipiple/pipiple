@@ -4,67 +4,81 @@
 
 <div class="submits_plans container">
   <div class="row">
-    <div class="col-12 frame">
-      <div class="title">
-        <h3>デートを投稿する</h3>
-      </div>
+    <div class="col-12">
+      <div class="card">
 
-      <%= form_for(@submits, url:{controller:'submits', action:'create'})do |f| %>
+        <div class="card-header">
+          <h3>デートを投稿する</h3>
+          <% if flash[:notice] %>
+            <div class="flash">
+              <%= flash[:notice].html_safe %>
+            </div>
+          <% end %>
+        </div>
 
-      <div class="field">
-        <%= f.label :プラン名%>
-        <br>
-        <%= f.text_field :name, class: 'form-control' %>
-      </div><br>
+        <div class="card-body">
+          <%= form_for(@submits, url:{controller:'submits', action:'create'})do |f| %>
 
-      <div class="field">
-        <%= f.label :エリアの名前 %>
-        <br>
-        <%= f.select :area, ['丸の内エリア（銀座・東京・日本橋）', '下町エリア（浅草・上野・押上）', '六本木エリア（六本木・品川・麻布）',
-        '新宿エリア（新宿・代々木）', '池袋エリア（池袋・赤羽・埼玉）', '渋谷エリア（渋谷・代官山・目黒）', '表参道エリア（原宿・青山）',
-        '23区外エリア（吉祥寺・立川）', 'お台場エリア（豊洲・有明・舞浜）', '横浜エリア（みなとみらい・元町中華街）'],
-        :prompt => '選択してください' %>
-      </div><br>
+          <div class="field">
+            <%= f.label :プラン名 %><span class="attention">※必須(30文字以内)</span>
+            <br>
+            <%= f.text_field :name, class: 'form-control count_area01', limit: '30' %>
+            <h6>現在の文字数：<span class="moji_suu01">0</span>字</h6>
+          </div><br>
 
-      <div class="field">
-        <%= f.label :目的（複数選択可） %><br>
-        <% @purposes.each do |purpose| %>
-          <%= purpose.purpose %>
-          <%= f.check_box :purposes, {multiple: true}, purpose.id, false %>
-        <% end %>
-      </div><br>
+          <div class="field">
+            <%= f.label :エリアの名前 %><span class="attention">※必須</span>
+            <br>
+            <%= f.select :area, ['丸の内エリア(銀座・東京・日本橋)', '下町エリア(浅草・上野・押上)', '六本木エリア(六本木・品川・麻布)',
+            '新宿エリア(新宿・代々木)', '池袋エリア(池袋・赤羽・埼玉)', '渋谷エリア(渋谷・代官山・目黒)', '表参道エリア(原宿・青山)',
+            '23区外エリア(吉祥寺・立川)', 'お台場エリア(豊洲・有明・舞浜)', '横浜エリア(みなとみらい・元町中華街)'],
+            :prompt => '選択してください' %>
+          </div><br>
 
-      <div class="field">
-        <%= f.label :雰囲気（タグ付け） %>
-        <br>
-        <%= f.text_field :mood, class: 'form-control' %>
-        <small class="form-text text-muted">※ハッシュタグ(#)をつけてください。 ex.#インスタ映え#夜景が綺麗</small>
-      </div><br>
+          <div class="field">
+            <%= f.label :目的（複数選択可） %><span>※必須</span>
+            <br>
+            <%= f.collection_check_boxes(:purpose_ids, Purpose.all, :id, :purpose) do |b| %>
+              <div class="purpose_all">
+                <%= b.label { b.check_box + b.text } %>
+              </div>
+            <% end %>
+          </div><br>
 
-      <div class="field">
-        <%= f.label :一人の金額 %>
-        <br>
-        <%= f.select :price, ['5000円以内', '5000円~10000円', '10000円~15000円', '15000円~20000円', '20000円以上'], :prompt => '選択してください' %>
-      </div><br>
+          <div class="field">
+            <%= f.label :おすすめポイント %><span style="color: black;">（20文字以内）</span>
+            <br>
+            <%= f.text_field :mood, class: 'form-control count_area02', limit: '20' %>
+            <h6>現在の文字数：<span class="moji_suu02">0</span>字</h6>
+          </div><br>
 
-      <div class="field">
-        <%= f.label :概要（〇〇_searchアクションの説明とshowアクション上） %>
-        <br>
-        <%= f.text_area :overview, :size => "100x2", class: 'form-control' %>
-      </div><br>
+          <div class="field">
+            <%= f.label :一人の金額 %><span class="attention">※必須</span>
+            <br>
+            <%= f.select :price, ['5000円以内', '5000円~10000円', '10000円~15000円', '15000円~20000円', '20000円以上'], :prompt => '選択してください' %>
+          </div><br>
 
-      <div id="date_spots">
-      <%= f.fields_for :date_spots do |i| %>
-        <%= render "date_spot_fields", f: i %>
-      <% end %>
-        <div id="add-date_spot" class="links">
-          <%= link_to_add_association "デートスポットを追加", f, :date_spots %>
+          <div class="field">
+            <%= f.label :プラン概要 %><span class="attention">※必須(80文字以内)</span>
+            <br>
+            <%= f.text_area :overview, :size => "100x2", class: 'form-control count_area03', limit: '80' %>
+            <h6>現在の文字数：<span class="moji_suu03">0</span>字</h6>
+          </div>
+
+          <div id="date_spots">
+            <%= f.fields_for :date_spots do |i| %>
+              <%= render "date_spot_fields", f: i %>
+            <% end %>
+            <div id="add-date_spot" class="links">
+              <%= link_to_add_association "デートスポットを追加", f, :date_spots %>
+            </div>
+          </div>
+          <div class="action">
+            <%= f.submit "投稿する", class: 'btn btn-warning' %>
+          </div><br>
+          <% end %>
         </div>
       </div>
-      <div class="action">
-        <%= f.submit "投稿する", class: 'btn btn-warning' %>
-      </div><br>
-      <% end %>
     </div>
   </div>
 </div>
@@ -83,12 +97,112 @@
     check_to_hide_or_show_add_link();
 
     function check_to_hide_or_show_add_link() {
-      if ($('#date_spots .nested-fields').length == 4) {
+      if ($('#date_spots .nested-fields').length == 5) {
         $('#add-date_spot a').hide();
       } else {
         $('#add-date_spot a').show();
       }
     }
   })
+
+  $(function(){
+    //カウントするフィールドを監視
+    $(".count_area01").keyup(function(){
+      //現在入力されている文字
+      var text = $(this).val();
+      //正確にカウントするため改行コード削除
+      text = text.replace((new RegExp("\r\n","g")),"");
+      text = text.replace((new RegExp("\n","g")),"");
+      //現在の文字数
+      var count = text.length;
+      //管理者が設定した上限文字数
+      var moji_limit = $(this).attr("limit");
+      //文字数をリアルタイムの表示
+      $(".moji_suu01").text(count);
+      //処理分け
+      if(count == 0){
+        //字を消して0文字となった場合。
+        $(".moji_suu01").text("0");
+      } else if(count > moji_limit) {
+        //上限文字数を超えたら赤色表示
+        $(".moji_suu01").css("color", "red");
+      } else {
+        //文字数が範囲内なら色を戻す
+        $(".moji_suu01").css("color", "");
+      }
+    });
+    $(".count_area02").keyup(function(){
+      //現在入力されている文字
+      var text = $(this).val();
+      //正確にカウントするため改行コード削除
+      text = text.replace((new RegExp("\r\n","g")),"");
+      text = text.replace((new RegExp("\n","g")),"");
+      //現在の文字数
+      var count = text.length;
+      //管理者が設定した上限文字数
+      var moji_limit = $(this).attr("limit");
+      //文字数をリアルタイムの表示
+      $(".moji_suu02").text(count);
+      //処理分け
+      if(count == 0){
+        //字を消して0文字となった場合。
+        $(".moji_suu02").text("0");
+      } else if(count > moji_limit) {
+        //上限文字数を超えたら赤色表示
+        $(".moji_suu02").css("color", "red");
+      } else {
+        //文字数が範囲内なら色を戻す
+        $(".moji_suu02").css("color", "");
+      }
+    });
+    $(".count_area03").keyup(function(){
+      //現在入力されている文字
+      var text = $(this).val();
+      //正確にカウントするため改行コード削除
+      text = text.replace((new RegExp("\r\n","g")),"");
+      text = text.replace((new RegExp("\n","g")),"");
+      //現在の文字数
+      var count = text.length;
+      //管理者が設定した上限文字数
+      var moji_limit = $(this).attr("limit");
+      //文字数をリアルタイムの表示
+      $(".moji_suu03").text(count);
+      //処理分け
+      if(count == 0){
+        //字を消して0文字となった場合。
+        $(".moji_suu03").text("0");
+      } else if(count > moji_limit) {
+        //上限文字数を超えたら赤色表示
+        $(".moji_suu03").css("color", "red");
+      } else {
+        //文字数が範囲内なら色を戻す
+        $(".moji_suu03").css("color", "");
+      }
+    });
+    $(".count_area04").keyup(function(){
+      //現在入力されている文字
+      var text = $(this).val();
+      //正確にカウントするため改行コード削除
+      text = text.replace((new RegExp("\r\n","g")),"");
+      text = text.replace((new RegExp("\n","g")),"");
+      //現在の文字数
+      var count = text.length;
+      //管理者が設定した上限文字数
+      var moji_limit = $(this).attr("limit");
+      //文字数をリアルタイムの表示
+      $(".moji_suu04").text(count);
+      //処理分け
+      if(count == 0){
+        //字を消して0文字となった場合。
+        $(".moji_suu04").text("0");
+      } else if(count > moji_limit) {
+        //上限文字数を超えたら赤色表示
+        $(".moji_suu04").css("color", "red");
+      } else {
+        //文字数が範囲内なら色を戻す
+        $(".moji_suu04").css("color", "");
+      }
+    });
+  });
 
 </script>

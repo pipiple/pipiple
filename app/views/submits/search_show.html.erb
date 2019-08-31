@@ -1,7 +1,6 @@
 <head>
-  <title>デートプラン - <%= @title %>【ぴぴぷる(PiPiple)】</title>
-  <meta name="description" content="様々な場面に応じたデートプランを紹介するWebサイト「ぴぴぷる」は、あなたに最適なデートを探せます。
-  厳選された<%= @title %>のデートプランを一覧">
+  <title>デートプラン一覧【ぴぴぷる(PiPiple)】</title>
+  <meta name="description" content="様々な場面に応じたデートプランを紹介するWebサイト「ぴぴぷる」は、あなたに最適なデートを探せます。">
 </head>
 
 <div class="submits search_show">
@@ -11,10 +10,10 @@
       <div class="tops-search">
         <%= form_tag(controller:"submits",action:"search_show") do %>
         <div class="cp_ipselect cp_sl04 select_a">
-          <%= select_tag :area_search, options_for_select({"エリアを選択" => 0, "丸の内エリア（銀座・東京・日本橋）" => "丸の内エリア（銀座・東京・日本橋）", "下町エリア（浅草・上野・押上）" => "下町エリア（浅草・上野・押上）",
-          "六本木エリア（六本木・品川・麻布）" => "六本木エリア（六本木・品川・麻布）", "新宿エリア（新宿・代々木）" => "新宿エリア（新宿・代々木）", "池袋エリア（池袋・赤羽・埼玉）" => "池袋エリア（池袋・赤羽・埼玉）",
-          "渋谷エリア（渋谷・代官山・目黒）" => "渋谷エリア（渋谷・代官山・目黒）", "表参道エリア（原宿・青山）" => "表参道エリア（原宿・青山）", "23区外エリア（吉祥寺・立川）" => "23区外エリア（吉祥寺・立川）",
-          "お台場エリア（豊洲・有明・舞浜）" => "お台場エリア（豊洲・有明・舞浜）", "横浜エリア（みなとみらい・元町中華街）" => "横浜エリア（みなとみらい・元町中華街）",}),:class => "select" %>
+          <%= select_tag :area_search, options_for_select({"エリアを選択" => 0, "丸の内エリア(銀座・東京・日本橋)" => "丸の内エリア(銀座・東京・日本橋)", "下町エリア(浅草・上野・押上)" => "下町エリア(浅草・上野・押上)",
+          "六本木エリア(六本木・品川・麻布)" => "六本木エリア(六本木・品川・麻布)", "新宿エリア(新宿・代々木)" => "新宿エリア(新宿・代々木)", "池袋エリア(池袋・赤羽・埼玉)" => "池袋エリア(池袋・赤羽・埼玉)",
+          "渋谷エリア(渋谷・代官山・目黒)" => "渋谷エリア(渋谷・代官山・目黒)", "表参道エリア(原宿・青山)" => "表参道エリア(原宿・青山)", "23区外エリア(吉祥寺・立川)" => "23区外エリア(吉祥寺・立川)",
+          "お台場エリア(豊洲・有明・舞浜)" => "お台場エリア(豊洲・有明・舞浜)", "横浜エリア(みなとみらい・元町中華街)" => "横浜エリア(みなとみらい・元町中華街)",}),:class => "select" %>
         </div>
         <div class="cp_ipselect cp_sl04 select_pm">
           <%= select_tag :purpose_search, options_for_select({"目的を選択" => 0, "付き合う前" => "付き合う前", "告白" => "告白", "初デート" => "初デート", "定番デート" => "定番デート",
@@ -60,22 +59,27 @@
     <!-- GoogleAdPhone01 -->
     <br>
     <div class="row">
-      <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+      <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
         <% @submits.each do |submit| %>
         <div class="planplan">
 
           <div class="img-thumbnail bg-light">
-            <% submit.date_spots.each do |ss| %>
             <div class="swiper-container">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <%= image_tag ss.image.to_s, :height => 130 %>
-                </div>
+                <% submit.date_spots.each do |ss| %>
+                  <div class="swiper-slide">
+                    <ul>
+                      <li>
+                      <%= image_tag ss.image.to_s, :class => "spots_image" %>
+                      </li>
+                    </ul>
+                  </div>
+                <% end %>
               </div>
+              <div class="swiper-pagination"></div>
               <div class="swiper-button-prev"></div>
               <div class="swiper-button-next"></div>
             </div>
-            <% end %>
           </div>
 
           <div class="description">
@@ -83,12 +87,12 @@
               <h4><%= submit.name %></h4>
             </div>
             <div class="description_ap">
-              <li>【エリア：<%= submit.area %>】</li>
-              <li>【金額：<%= submit.price %>】</li>
+              <li>【エリア】<%= submit.area %></li>
+              <li>【金額】<%= submit.price %></li>
             </div><br>
             <p><%= submit.overview %></p><br>
             <div class="description_mood">
-              <li>こだわり条件（<%= submit.mood %>）</li>
+              <li>おすすめポイント→<%= submit.mood %></li>
             </div>
             <div class="show_page">
               <%= link_to "詳細ページ⇨", submit_path(submit.id) %>
@@ -96,7 +100,12 @@
           </div>
         </div><br>
         <% end %>
-        <%= paginate @submits %>
+        <%= paginate @submits, :window => 2 %>
+
+        <div class="post-space ad_phone">
+          <%= link_to "投稿する", { :controller => "submits", :action => "new"}, :method => :get, class: "btn btn-danger btn-block post" %>
+          <p>※会員登録が必要です。</p>
+        </div>
 
         <div class="advertisement">
           <!-- GoogleAd01 -->
@@ -120,20 +129,13 @@
         <!-- nend -->
       </div>
 
-      <div class="col-lg-2 col-md-2 d-sm-2 hidden-xs">
+      <div class="col-lg-2 col-md-2 hidden-sm hidden-xs">
+        <div class="post-space ad_pc">
+          <%= link_to "投稿する", { :controller => "submits", :action => "new"}, :method => :get, class: "btn btn-danger btn-block post" %>
+          <p>※会員登録が必要です。</p>
+        </div>
         <!-- GoogleAd02 -->
         <div class="ad_pc ad_side">
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="ca-pub-5782150709003973"
-               data-ad-slot="5420452417"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-          <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
-          <br><br>
           <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
           <ins class="adsbygoogle"
                style="display:block"
@@ -159,5 +161,14 @@
       prevEl: '.swiper-button-prev',
     },
     loop: true,
+    slidesPerView: 'auto',
+    autoplay: {
+    delay: 8000,
+    disableOnInteraction: true
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+    },
   });
 </script>

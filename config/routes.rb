@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit]
 
   get 'submits/index' => 'submits#index'
-  resources :submits
+  post 'submits/index' => 'submits#index'
 
   get 'submits/new' => 'submits#new'
   post 'submits/new' => 'submits#create'
@@ -23,7 +23,10 @@ Rails.application.routes.draw do
   get 'submits/purpose/:search' => 'submits#purpose_search'
   get 'submits/mood/:search' => 'submits#mood_search'
 
+  get 'submits/show/:id/' => 'submits#show'
+
   delete 'submits/:id' => 'submits#destroy'
+  resources :submits
 
   get 'tops/index' => 'tops#index'
   root 'tops#index'

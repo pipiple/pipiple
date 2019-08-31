@@ -5,19 +5,84 @@
 <div class="users container">
   <div class="row">
     <div class="col-12">
-      <table class="table table-hover">
-        <h3>マイページ</h3>
-        <tr><th>名前</th><th><%= @user.name %></th></tr>
-        <tr><th>年齢</th><th><%= @user.age %></th></tr>
-        <tr><th>性別</th><th><%= @user.sex %></th></tr>
-        <tr><th>メールアドレス</th><th><%= @user.email %></th></tr>
+      <div class="each_title">
+        <h4>◇ ユーザー情報</h4>
+      </div>
+      <table class="table table-bordered">
+        <tr><th>名前</th><td><%= @user.name %></td></tr>
+        <tr><th>年齢</th><td><%= @user.age %></td></tr>
+        <tr><th>性別</th><td><%= @user.sex %></td></tr>
+        <tr><th>メールアドレス</th><td><%= @user.email %></td></tr>
         <tr><th>プロフィール</th><td><%= @user.profile %></td></tr>
-      </table>
+      </table><br>
 
+      <div class="submits search_show">
+        <div class="each_title">
+          <h4>◇ 投稿したデートプラン一覧</h4>
+        </div>
+        <% @submits.each do |submit| %>
+        <div class="planplan">
+          <div class="img-thumbnail bg-light">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <% submit.date_spots.each do |ss| %>
+                  <div class="swiper-slide">
+                    <ul>
+                      <li>
+                      <%= image_tag ss.image.to_s, :class => "spots_image" %>
+                      </li>
+                    </ul>
+                  </div>
+                <% end %>
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
+
+          <div class="description">
+            <div class="description_n">
+              <h4><%= submit.name %></h4>
+            </div>
+            <div class="description_ap">
+              <li>【エリア】<%= submit.area %></li>
+              <li>【金額】<%= submit.price %></li>
+            </div><br>
+            <p><%= submit.overview %></p><br>
+            <div class="description_mood">
+              <li>おすすめポイント→<%= submit.mood %></li>
+            </div>
+            <div class="show_page">
+              <%= link_to "詳細ページ⇨", submit_path(submit.id) %>
+            </div>
+          </div>
+        </div><br>
+        <% end %>
+      </div>
       <div class="create_edit contents">
-        <p><%= link_to "登録情報編集", { :controller => "users/registrations", :action => "edit"}, :method => :get, class: "btn btn-warning btn-block" %></p>
+        <p><%= link_to "ユーザー情報編集", { :controller => "users/registrations", :action => "edit"}, :method => :get, class: "btn btn-warning btn-block" %></p>
         <p><%= link_to "デートを投稿", { :controller => "submits", :action => "new"}, :method => :get, class: "btn btn-danger btn-block" %></p>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    loop: true,
+    slidesPerView: 'auto',
+    autoplay: {
+    delay: 8000,
+    disableOnInteraction: true
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+    },
+  });
+</script>

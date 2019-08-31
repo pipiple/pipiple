@@ -73,5 +73,4 @@ gem 'ransack'
 gem 'cloudinary'
 
 gem 'kaminari'
-gem 'impressionist'
 gem 'cocoon'

@@ -17,8 +17,20 @@
   font-style: oblique;
   font-family: serif;
 }
+.header-nav nav:first-child {
+  margin-right: auto;
+  margin-left: 3%;
+}
 .header-nav nav {
   margin-right: 3%;
+}
+.header-nav a {
+  color: black;
+}
+.pipiple_image {
+  height: 20px;
+  margin-bottom: 2px;
+  text-align: center;
 }
 
 .advertisement {
@@ -29,13 +41,21 @@
   margin-left: 15px;
 }
 
+.post-space {
+  margin-left: 15px;
+  text-align: center;
+}
+.post-space p {
+  font-size: 11px;
+}
+
 .tops.index{
   font-family: serif;
   /* head-block */
   .head-block {
-    background-image: url("first-back.jpg");
+    background-image: url("tops_image.jpg");
     background-size: cover;
-    background-position: 0 75%;
+    background-position: 0 50%;
     width: 100%;
     height: 450px;
 
@@ -46,24 +66,24 @@
 
   .title-container {
     position: absolute;
-    margin-top: 140px;
+    margin-left: 22%;
     text-align: center;
   }
 
   .title-container ruby,h1 {
-    font-size: 60px;
+    font-size: 70px;
     font-family: serif;
     font-style: oblique;
-    color: #BDBDBD;
+    color: #FF5F17;
   }
   rt {
     font-size: 20px !important;
   }
   .title-container p {
     font-style: oblique;
-    font-size: 15px;
+    font-size: 18px;
     font-family: serif;
-    color: #BDBDBD;
+    color: #FF5F17;
   }
 
   /*   head-block End   */
@@ -73,7 +93,7 @@
     text-align: center;
     overflow: hidden;
     width: auto;
-    margin: 2em auto;
+    margin-top: 350px;
   }
 
   .cp_ipselect {
@@ -140,13 +160,67 @@
   /*   second-block   */
   .second-block {
     display: flex;
+    margin-top: 20px;
   }
 
-  .tops-main-container {
-    width: 70%;
+  .tops-newplan {
+    padding: 10px;
+    margin: 20px 5px;
+    border-radius: 5px;
   }
-  .tops-sub-container {
-    width: 10%;
+  .tops-newplan h4 {
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .card:hover {
+    opacity: 0.7;
+    text-decoration: none;
+  }
+  /*画像swiper*/
+  .swiper-slide ul {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .swiper-slide ul li {
+    display: inline-block;
+    overflow: hidden;
+  }
+  .swiper-pagination {
+    position: absolute;
+    bottom: 0;
+  }
+  .swiper-button-prev {
+    background-image: url(https://www.otwo.jp/blog/demo/swiper/arrow_left.png);
+  }
+  .swiper-button-next{
+    background-image: url(https://www.otwo.jp/blog/demo/swiper/arrow_right.png);
+  }
+  /*画像のswiper END*/
+  .spots_image {
+    height: 140px;
+    width: 230px;
+    object-fit: cover;
+  }
+  .card-title {
+    color: #dc3545;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .card-body {
+    font-size: 11px;
+    padding: 10px;
+  }
+  .card-text p {
+    color: grey;
+    display: inline-block;
+    margin-bottom: 4px;
+    text-decoration: underline;
+    text-decoration-color: #A4A4A4;
+  }
+  .icon {
+    width: 14px;
+    padding-bottom: 2px;
+    padding-right: 4px;
   }
 
   #navi_page_link {
@@ -203,19 +277,25 @@
   }
 
   .tops-area {
-    padding: 30px;
+    padding: 25px;
     border-bottom: 1px solid #EFEFEF;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+  }
+  .area_list {
+    padding: 0px 6px;
   }
 
   .tops-area p {
-    margin-right: 2%;
     float: left;
   }
 
   .tops-purpose {
-    padding: 30px;
+    padding: 25px;
     margin-bottom: 10px;
+  }
+
+  .mouse:hover {
+    opacity: 0.7;
   }
 
   .tops-purpose h4 {
@@ -232,38 +312,33 @@
   }
   /*   second-block End   */
 
-  .post-space {
-    margin-left: 15px;
-    text-align: center;
-  }
   .post {
     margin-top: 7px;
     height: 71px;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 15px;
     line-height: 56px;
-  }
-  .post-space p {
-    font-size: 11px;
   }
 
   /*スマホ用*/
   @media screen and (max-width: 480px) {
     .head-block {
-      height: 180px;
+      height: 130px;
     }
+
     .title-container {
-      margin-top: 60px;
-      line-height: 2px;
+      margin-top: 40px;
     }
     .title-container ruby,h1 {
-      font-size: 28px;
+      font-size: 30px;
+      margin-bottom: 0px;
+      font-weight: 600;
     }
     rt {
       font-size: 9px !important;
     }
     .title-container p {
-      font-size: 12px;
+      display: none !important;
     }
 
     .select_a {
@@ -276,6 +351,9 @@
       width: 20%;
     }
 
+    .second-block {
+      margin-top: 0px;
+    }
     .second-block h2 {
       font-size: 24px;
     }
@@ -289,24 +367,14 @@
       width: 130px;
     }
 
-    .post-space {
-      margin: 0px 15px;
-    }
     .post {
       height: 45px;
       line-height: 30px;
       border-radius: 12px;
     }
-    .post-space p {
-      font-size: 8px;
-    }
 
     .tops-area {
-      padding: 5px;
-    }
-    .tops-area p {
-      margin-right: 5%;
-      font-size: 14px;
+      padding-right: 10px;
     }
 
     .tops-purpose {
@@ -346,6 +414,16 @@
     font-size: 14px;
     display: table-cell;
     vertical-align: middle;
+  }
+
+  .post-space {
+    margin: 0px 15px;
+  }
+  .post-space p {
+    font-size: 8px;
+  }
+  .tops-search {
+    margin: 2em auto !important;
   }
 }
 @media screen and (min-width: 481px){

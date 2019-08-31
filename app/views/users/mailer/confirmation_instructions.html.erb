@@ -1,5 +1,10 @@
-<p>Welcome <%= @email %>!</p>
+<p><%= @email %> 様</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>この度は「PiPiple(ぴぴぷる)」に会員登録いただき、ありがとうございます！</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p>下記のリンクをクリックしていただきますと登録が完了致します。</p>
+<p><%= link_to 'メールアドレスを確認する', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p>※24時間以内にアクセスがない場合、このリンクは無効となってしまいますのでご注意下さい。</p>
+
+
+<p>それでは、ご登録の完了をお待ちしております。</p>

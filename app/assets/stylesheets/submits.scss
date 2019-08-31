@@ -6,19 +6,13 @@
   padding: 0;
 }
 .submits_plans {
-  .frame {
-    border: 2px solid #FFCCFF;
-    background-color: #FFEEFF;
+  .flash {
+    background-color: #FFFF99;
   }
 
-  .title {
-    text-align: center;
-    width: 100%;
-  }
-  .title h3 {
+  .card-header h3 {
     font-weight: 700;
-    background-color: #FFCCFF;
-    padding: 5px 10px;
+    margin: 0;
   }
 
   .field {
@@ -27,17 +21,39 @@
     font-weight: 600;
     padding-bottom: 10px;
   }
+  .attention {
+    color: red;
+    font-size: 12px;
+    padding-left: 5px;
+  }
+  .field h6 {
+    font-size: 14px;
+  }
   .form-control {
     width: 100%!important;
   }
 
+  .purpose_all{
+    font-weight: 100;
+  }
+
   .action {
     text-align: center;
+    padding-top: 10px;
   }
 
   @media screen and (max-width: 480px){
+    .flash {
+      font-size: 12px;
+    }
     small {
       font-size: 5px;
+    }
+    .field {
+      font-size: 16px;
+    }
+    .links {
+      font-size: 14px;
     }
 
   }

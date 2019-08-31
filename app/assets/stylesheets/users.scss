@@ -26,13 +26,18 @@
   }
 
   // マイページ
-  h3 {
-    text-align: center;
-    font-weight: 700;
-    padding: 5px 10px;
+  .each_title {
+    padding: 10px;
+  }
+  .each_title h4 {
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  .table {
+    color: #555555
   }
   .table th {
-    width: calc(100%/2);
+    width: 30%;
   }
   .create_edit {
     display: flex;
@@ -40,6 +45,17 @@
   }
   .create_edit p {
     margin: 10px 10%;
+  }
+  @media screen and (max-width: 480px) {
+    .table tr {
+      font-size: 12px;
+    }
+    .table th,td {
+      padding: 6px;
+    }
+    .create_edit p {
+      margin: 10px auto;
+    }
   }
 
   // 登録情報変更

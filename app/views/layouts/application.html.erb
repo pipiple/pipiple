@@ -15,6 +15,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= favicon_link_tag 'icon.png'%>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -28,7 +30,7 @@
     <div class="container-fluid">
       <div class="row">
         <header class="header-nav">
-          <nav><a href="/">PiPiple(β版)</a></nav>
+          <nav><a href="/"><image src="/assets/icon.png" class="pipiple_image">PiPiple</a></nav>
           <% if user_signed_in? %>
             <nav><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></nav>
             <nav><a href="/users/<%= current_user.id %>">マイページ</a></nav>

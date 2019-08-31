@@ -1,33 +1,39 @@
-<div class="nested-fields">
+<div class="nested-fields"><br>
+  <div class="form-control">
 
-  <div class="field">
-    <%= f.label :カテゴリー %>
-    <br>
-    <%= f.select :category, ['ランチ', 'デートスポット①', 'デートスポット②', 'ディナー', 'ホテル'] %>
-  </div><br>
+    <div class="field">
+      <%= f.label :カテゴリー %><span class="attention">※必須</span>
+      <br>
+      <%= f.select :category, ['ランチ', 'デートスポット①', 'デートスポット②', 'ディナー', 'ホテル'], class: 'form-control' %>
+    </div><br>
 
-  <div class="field">
-    <%= f.label :店名（場所名） %>
-    <br>
-    <%= f.text_field :name, class: 'form-control' %>
-  </div><br>
+    <div class="field">
+      <%= f.label :店名・場所名 %><span class="attention">※必須</span>
+      <br>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div><br>
 
-  <div class="field">
-    <%= f.label :内容 %>
-    <br>
-    <%= f.text_area :description, :size => "100x2", class: 'form-control' %>
-  </div><br>
+    <div class="field">
+      <%= f.label :内容 %><span class="attention">※必須(100文字以下)</span>
+      <br>
+      <%= f.text_area :description, :size => "100x2", class: 'form-control count_area04', limit: '100' %>
+      <h6>現在の文字数：<span class="moji_suu04">0</span>字</h6>
+    </div><br>
 
-  <div class="field">
-    <%= f.label :画像 %>
-    <%= f.file_field :image %>
-  </div><br>
+    <div class="field">
+      <%= f.label :画像 %><span class="attention">※必須</span>
+      <br>
+      <%= f.file_field :image, style: 'font-size: 12px;' %>
+    </div><br>
 
-  <div class="field">
-    <%= f.label :URL %>
-    <br>
-    <%= f.text_field :url, class: 'form-control' %>
-  </div><br>
+    <div class="field">
+      <%= f.label :URL %><span class="attention">※必須(ex.一休、食べログ、ホットペッパー)</span>
+      <br>
+      <%= f.text_field :url, class: 'form-control' %>
+    </div>
+  </div>
 
-  <%= link_to_remove_association "デートスポットを消す", f %>
+  <div class="links">
+    <%= link_to_remove_association "デートスポットを消す", f %>
+  </div>
 </div>

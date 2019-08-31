@@ -2,12 +2,11 @@ class SubmitsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :index]
 
   def index
-    @submits = Submit.order("id DESC").page(params[:page]).per(10)
+    @submits = Submit.all.order("id DESC").page(params[:page]).per(5)
   end
 
   def edit
     @submits = Submit.find(params[:id])
-
   end
 
   def list
@@ -15,13 +14,12 @@ class SubmitsController < ApplicationController
 
   def new
     @submits = Submit.new
-    @purposes = Purpose.all
     @submits.date_spots.build
-
   end
 
   def search_show
-    @submits = Submit.search(params[:area_search],params[:purpose_search],params[:price_search]).order("id DESC").page(params[:page]).per(5)
+    @submits = Submit.search(params[:area_search],params[:purpose_search],params[:price_search]).order("id DESC")
+    @submits = Kaminari.paginate_array(@submits).page(params[:page]).per(5)
     if !@submits
       @submits = Submit.all
     end
@@ -56,12 +54,12 @@ class SubmitsController < ApplicationController
   def create
     @submit = Submit.new(submit_params)
     @submit.user_id = current_user.id
-    @submit.purposes = Purpose.where(id: params[:submit][:purposes])
     #新しい投稿の保存に成功した場合
     if @submit.save
         redirect_to submit_path(@submit)
     #新しい投稿の保存に失敗した場合
       else
+        flash[:notice]="⚠️投稿に失敗しました。<br>※必須項目が全て埋まっているか確認してください。"
         #もう一回投稿画面へ
         redirect_to action: "new"
     end
@@ -70,7 +68,14 @@ class SubmitsController < ApplicationController
   def update
     @submit = Submit.find(params[:id])
     @submit.update(submit_params)
-    redirect_to submit_path(@submit)
+    if @submit.save
+        redirect_to submit_path(@submit)
+    #新しい投稿の保存に失敗した場合
+      else
+        flash[:notice]="⚠️更新に失敗しました。<br>※必須項目が全て埋まっているか確認してください。"
+        #もう一回投稿画面へ
+        redirect_to action: "edit"
+    end
   end
 
   def destroy
@@ -83,7 +88,7 @@ class SubmitsController < ApplicationController
 
   private
   def submit_params
-    params.require(:submit).permit(:name, :area, :mood, :price, :overview, date_spots_attributes: [:id, :name,
+    params.require(:submit).permit(:name, :area, :mood, :price, :overview, {:purpose_ids=> [] }, date_spots_attributes: [:id, :name,
       :description, :image, :category, :url, :_destroy])
   end
 

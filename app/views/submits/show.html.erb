@@ -4,26 +4,58 @@
 
 <div class="submits show container">
   <div class="row">
-    <div class="plan-description col-lg-10 col-md-10 col-sm-10 col-xs-12">
+    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
       <div class="contents-top">
         <div class="contents-name">
           <h2><%= @submit.name %></h2>
+          <p>投稿者：<%= @submit.user.name %></p>
         </div>
-        <div class="contents-overview">
-          <p><%= @submit.overview %></p>
+        <div class="each_title">
+          <h5>◇ デートプラン情報</h5>
+        </div>
+        <div class="info">
+          <table class="table table-bordered">
+            <tr><th>エリア</th><td><%= @submit.area %></td></tr>
+            <tr><th>金額</th><td><%= @submit.price %></td></tr>
+            <tr><th>概要</th><td><%= @submit.overview %></td></tr>
+            <tr><th>目的</th><td><% @submit.purposes.each do |purpose| %><li><%= purpose.purpose %></li><% end %></td></tr>
+          </table>
         </div>
       </div>
-      <div class="user-name">
-        <b>投稿者：<%= @submit.user.name %><b>
+      <div class="each_title">
+        <h5>◇ デートプラン詳細</h5>
       </div>
-      <% @submit.date_spots.each do |i| %>
-      <div class="www">
-        <b><%= i.name %></b>
+      <% @submit.date_spots.each_with_index do |i, ii| %>
+        <% if ii == 0 %>
+          <% else %>
+            <div class="d-flex justify-content-around col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <image src="/assets/arrows.png" class="arrows">
+            </div>
+        <% end %>
+      <div class="contents">
+        <div class="each-category">
+          <b><%= i.category %></b>
+        </div>
+        <div class="card col-12">
+          <%= link_to(i.url) do %>
+          <div class="row no-gutters">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <%= image_tag i.image.to_s, :class => "img-thumbnail card-img each-image" %>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+              <div class="card-body">
+                <h4 class="card-title"><%= i.name %></h4>
+                <p class="card-text"><%= i.description %></p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
       </div>
       <% end %>
 
 
-      <div class="delete_edit contents">
+      <div class="delete_edit">
         <% if user_signed_in? && current_user.id == @submit.user_id %>
           <p><%= link_to '編集', edit_submit_path(@submit), class: "btn btn-danger" %></p>
           <p><%= link_to '削除', "/submits/#{@submit.id}", method: :delete, data: { confirm: "削除してよろしいですか？" }, class: "btn btn-danger" %></p>
