@@ -8,6 +8,26 @@ class CreateSubmits < ActiveRecord::Migration[5.2]
       t.text :overview
       t.integer :user_id
       t.timestamps
+
+      t.string :afternoon
+      t.text :afternoon_body
+      t.string :afternoon_image
+      t.string :afternoon_URL
+
+      t.string :evening
+      t.text :evening_body
+      t.string :evening_image
+      t.string :evening_URL
+
+      t.string :dinner
+      t.text :dinner_body
+      t.string :dinner_image
+      t.string :dinner_URL
+
+      t.string :lunch
+      t.text :lunch_body
+      t.string :lunch_image
+      t.string :lunch_URL
     end
   end
 end
