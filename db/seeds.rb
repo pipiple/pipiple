@@ -6,6 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.create(id: 1,
+            email: "pipiple.official@gmail.com",
+            created_at: "2019-08-31 14:44:00",
+            updated_at: "2019-08-31 14:44:33",
+            name: "pipiple",
+            age: "20歳〜24歳",
+            sex: "男性",
+            profile: nil,
+            user_id: nil)
 
 Purpose.create(:purpose => '付き合う前')
 Purpose.create(:purpose => '告白')
