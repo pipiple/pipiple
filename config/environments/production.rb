@@ -51,13 +51,13 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :enable_starttls_auto => true,
-    :address => "smtp.gmail.com",
+    :user_name => "sg1mudmm@kke.com",
+　　　　　　　　:password => "datepipi03",
+    :domain => "heroku.com",
+    :address => "smtp.sendgrid.net",
     :port => 587,
-    :domain => 'smtp.gmail.com',
-    :user_name => "pipiple.official@gmail.com",
-    :password => "datepipi03",
-    :authentication => 'login',
+    :authentication => :plain,
+    :enable_starttls_auto => true
     }
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
